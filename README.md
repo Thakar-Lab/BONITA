@@ -43,7 +43,7 @@ There are three main steps in BONITA: prepare pathways for rule inference, rule 
 **Step 1: Pathway prepearation**
 
 BONITA needs omics data, gst file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
-comma separated: `python prepare_pathways.py Your_omics_data Your_gst_file -sep ,`
+comma separated: `python pathway_analysis_setup.py Your_omics_data Your_gst_file -sep ,`
 tab separated: `python pathway_analysis_setup.py -t Your_omics_data Your_gst_file`
 
 **Step 2: Rule inference**
