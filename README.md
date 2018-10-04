@@ -34,7 +34,7 @@ Now you have a fully functional distribution of BONITA! Time to gather your data
 
 You will need the following files to run BONITA:
 * omics data as a plaintext table (csv, tsv, or similar) with the first row containing a holder for gene symbol column then sample names and subsequent rows containing gene symbol in first column and column-normalized (rpm or rpkm in transcriptomics) abundance measures in other columns. 
-* gst file with list of KEGG pathways to be considered (can be downloaded from msigdb)
+* gmt file with list of KEGG pathways to be considered (can be downloaded from msigdb)
 * matrix of conditions with each line representing a sample and the first column containing the names of the samples and subsequent columns describing 1/0 if the sample is part of that condition or not. 
 * list of contrasts you would like to run with each contrast on a single line
 
@@ -42,9 +42,9 @@ There are three main steps in BONITA: prepare pathways for rule inference, rule 
 
 **Step 1: Pathway prepearation**
 
-BONITA needs omics data, gst file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
-comma separated: `python pathway_analysis_setup.py Your_omics_data Your_gst_file -sep ,`
-tab separated: `python pathway_analysis_setup.py -t Your_omics_data Your_gst_file`
+BONITA needs omics data, gmt file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
+comma separated: `python pathway_analysis_setup.py Your_omics_data Your_gmt_file -sep ,`
+tab separated: `python pathway_analysis_setup.py -t Your_omics_data Your_gmt_file`
 
 **Step 2: Rule inference**
 
@@ -53,5 +53,5 @@ Simply run the script find_rules_pathway_analysis.py which will automatically su
 **Step 3: Pathway Analysis**
 To accomplish this, the proper inpus must be provided to pathway_analysis_score_pathways.py
 
-`python pathway_analysis_score_pathways.py Your_omics_data Your_condition_matrix Your_desired_contrasts -sep Separator_used_in_gst_and_omics_data`\
+`python pathway_analysis_score_pathways.py Your_omics_data Your_condition_matrix Your_desired_contrasts -sep Separator_used_in_gmt_and_omics_data`\
 If your files are tab seperated, then the following command can be used: `python pathway_analysis.py -t Your_omics_data Your_condition_matrix Your_desired_contrasts`
