@@ -24,7 +24,7 @@ bs4==0.0.1, lxml==4.1.1, seaborn==0.8.1. In our experience, only the networkx ve
 ## Install BONITA
 You can download and use BONITA in one of two ways:
 1. Download a zipped folder containing all the files you need (github download link in green box above and to the right)\
-1. Clone this git repository in the folder of your choice using the command `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`\
+1. Clone this git repository in the folder of your choice using the command `git clone https://github.com/Thakar-Lab/BONITA.git`\
 
 Next, the C code must be compiled using the make file. Simply type make while in the BONITA folder. \
 `make`\
