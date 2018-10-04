@@ -1,0 +1,31 @@
+ko03050  Proteasome
+ko04060  Cytokine-cytokine receptor interaction
+ko04066  HIF-1 signaling pathway
+ko04350  TGF-beta signaling pathway
+ko04380  Osteoclast differentiation
+ko04612  Antigen processing and presentation
+ko04630  Jak-STAT signaling pathway
+ko04650  Natural killer cell mediated cytotoxicity
+ko04657  IL-17 signaling pathway
+ko04658  Th1 and Th2 cell differentiation
+ko04659  Th17 cell differentiation
+ko04660  T cell receptor signaling pathway
+ko04940  Type I diabetes mellitus
+ko05132  Salmonella infection
+ko05140  Leishmaniasis
+ko05142  Chagas disease (American trypanosomiasis)
+ko05143  African trypanosomiasis
+ko05144  Malaria
+ko05145  Toxoplasmosis
+ko05146  Amoebiasis
+ko05152  Tuberculosis
+ko05162  Measles
+ko05164  Influenza A
+ko05168  Herpes simplex infection
+ko05169  Epstein-Barr virus infection
+ko05321  Inflammatory bowel disease (IBD)
+ko05322  Systemic lupus erythematosus
+ko05323  Rheumatoid arthritis
+ko05330  Allograft rejection
+ko05332  Graft-versus-host disease
+ko05418  Fluid shear stress and atherosclerosis
