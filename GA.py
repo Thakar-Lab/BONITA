@@ -375,7 +375,6 @@ def assignCrowdingDist(individuals):
 
 # master GA algorithm
 def eaMuPlusLambdaAdaptive( toolbox, model, mu, lambda_, cxpb, mutpb, ngen, namer, newSSS,KOlist, KIlist, params ,boolC,stats=None, verbose=__debug__):
-	modelNodes=params.modelNodes
 	# population=[[copy.deepcopy(model),genBits(model)]for i in range(params.popSize)]
 	population=toolbox.population(n=params.popSize)
 	mutModel=params.mutModel
