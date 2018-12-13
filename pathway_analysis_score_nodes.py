@@ -11,17 +11,21 @@ from GA import GAsearchModel, localSearch
 
 # calculate importance scores
 def calcImportance(individual,params,model, sss,knockoutLists, knockinLists, boolC):
-	importanceScores=[]
+	importanceScores=[] # holder for impact scores
+	# loop over all nodes
 	for node in range(len(model.nodeList)):
-		SSEs=[]
+		SSEs=[] # add SSE across samples
 		nodeValues=[sss[j][model.nodeList[node]]for j in range(0,len(sss))]
-		for j in range(0,len(sss)):
+		for j in range(0,len(sss)): # change each sample to max and min and observe differences
 			ss=sss[j]
-			initValues=model.initValueList[j]
+			# change value to max
+			initValues=list(model.initValueList[j])
 			initValues[node]=max(nodeValues)
 			boolValues1=NPsync(individual, model, params.cells, initValues, params, knockoutLists[j], knockinLists[j], boolC)
+			# change value to min
 			initValues[node]=min(nodeValues)
 			boolValues2=NPsync(individual, model, params.cells, initValues, params, knockoutLists[j], knockinLists[j], boolC)
+			# sum differences across, nodes, samples for max vs min value at node j
 			SSE=0
 			for i in range(0, len(model.nodeList)):
 				SSE+=(boolValues1[i]-boolValues2[i])**2

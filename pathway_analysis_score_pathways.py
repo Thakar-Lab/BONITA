@@ -37,6 +37,8 @@ def outputGraphs(pathway, RAval, comparator, pathImportances):
 	nx.set_node_attributes(original,'RA',{k: RAval[k] for k in original.nodes()})
 	# print(maximportance)
 	maximportance=max([(pathImportances[v]) for v in pathImportances])
+	if maximportance==0:
+		maximportance=1.
 	nx.set_node_attributes(original,'IS',{k: (float(pathImportances[k])/maximportance) for k in original.nodes()})
 	# write graph of rules with annotations
 	ruleGraph=Get_expanded_network(pathway[2][0].split('\n'),equal_sign='*=')
@@ -108,26 +110,7 @@ def findPathwayList():
 			# ImportanceVals[storeModel[1][node]]=math.log(np.mean([pathVals[i][node] for i in range(5)]),2)
 			ImportanceVals[storeModel[1][node]]=float(np.mean([math.log(1.+pathVals[i][node] ,2) for i in range(5)]))
 		# add nodes removed during network simplification back in
-		removedNodes=pickle.Unpickler(open( 'pickles/'+code+'_addLaterNodes.pickle', "rb" )).load()
-		doubleRemoveNodes=[]
-		for node in removedNodes:
-			if node[1] in ImportanceVals:
-				ImportanceVals[node[0]]=ImportanceVals[node[1]]
-			else:
-				doubleRemoveNodes.append(node)
-		count=0
-		while len(doubleRemoveNodes)>0 and count<1000:
-			count=count+1
-			tripleRemoveNodes=[]
-			for node in doubleRemoveNodes:
-				if node[1] in ImportanceVals:
-					ImportanceVals[node[0]]=ImportanceVals[node[1]]
-				else:
-					tripleRemoveNodes.append(node)
-			doubleRemoveNodes=tripleRemoveNodes
 		pathways.append([code,ImportanceVals, rules, graph])
-		if count>1000:
-			print('failed to add removed nodes back in:' + str(doubleRemoveNodes))
 	return pathways
 
 # read in Omics data
@@ -244,11 +227,9 @@ if __name__ == '__main__':
 
 	parser.add_argument("matrix")
 	parser.add_argument("diffName")
+	
 	results = parser.parse_args()
 	matrixName= results.matrix
-
 	# run pathway analysis
 	analyze_pathways(results.diffName, matrixName, results.data, results.sep)
-
 	print("--- %s seconds ---" % (time.time() - start_time))
-

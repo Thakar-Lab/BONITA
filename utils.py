@@ -3,6 +3,32 @@ import numpy as numpy
 from random import random
 import csv as csv
 import networkx as nx
+from scipy.stats import variation
+
+# read rpm or fpkm data into format necessary for BONITA simulations and pathway analysis
+def readFpkmData(dataName, delmited):
+	with open(dataName) as csvfile:
+		data=[]
+		reader = csv.reader(csvfile, delimiter=delmited)
+		for row in reader:
+			data.append(row)
+	sampleList=[]
+	geneDict={}
+	cvDict={}
+	for j in range(1,len(data[1])):
+		sampleList.append({})
+	for i in range(1,len(data)):
+		tempDatalist=[]
+		for j in range(1,len(data[i])):
+			tempDatalist.append(float(data[i][j]))
+		maxdata=numpy.max(tempDatalist)
+		cvDict[data[i][0]]=variation(tempDatalist)
+		if maxdata==0:
+			maxdata=1.
+		geneDict[data[i][0]]=tempDatalist/maxdata
+		for j in range(0,len(data[i])-1):
+			sampleList[j][str.upper(data[i][0])]=float(data[i][j+1])/maxdata
+	return sampleList, geneDict, cvDict
 
 # writes rules as a network
 def Get_expanded_network(rules,equal_sign='*='):
@@ -169,8 +195,6 @@ def writeNode(currentNode,nodeIndividual, model):
 		return writenode + ' ' + model.nodeList[currentNode] #if no inputs, maintain value
 	elif len(andNodes)==1: 
 		#if only one input, then can either affect or not affect the node. so either keep the value or update to the single input's value
-		# print(model.andLenList[currentNode])
-		# print(nodeIndividual)
 		value=''	
 		#if only one input, then set to that number
 		if andNodeInvertList[0][0]==0:
@@ -203,20 +227,6 @@ def writeNode(currentNode,nodeIndividual, model):
 			writenode = writenode + ' or ' + val
 		return writenode
 
-def simpleNetBuild():
-	graph = nx.DiGraph()
-	graph.add_edge('a1','a', signal='a')	
-	graph.add_edge('a2','a', signal='a')
-	graph.add_edge('a3','a', signal='a')
-	graph.add_edge('a4','a', signal='a')
-	graph.add_edge('b1','b', signal='a')
-	graph.add_edge('b2','b', signal='a')
-	graph.add_edge('b3','b', signal='a')
-	graph.add_edge('a','d', signal='a')	
-	graph.add_edge('b','d', signal='a')
-	graph.add_edge('d','e', signal='a')
-	return graph
-
 def LiuNetwork1Builder():
 	graph = nx.DiGraph()
 	graph.add_edge('g','k', signal='a')	
@@ -229,6 +239,4 @@ def LiuNetwork1Builder():
 	graph.add_edge('c','h', signal='a')
 	graph.add_edge('d','f', signal='a')	
 	graph.add_edge('d','g', signal='a')
-
 	return graph
-
