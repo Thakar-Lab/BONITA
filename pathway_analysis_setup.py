@@ -101,7 +101,6 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 
 	# 2.  remove complexes and rewire components
 	removeNodeList= [x for x in graph.nodes() if  '-' in x]
-	# print(removeNodeList)
 	for rm in removeNodeList:
 		for start in graph.predecessors(rm):
 			edge1=graph.get_edge_data(start,rm)['signal']

@@ -417,7 +417,7 @@ def NPasync(individual, model, cells, sampleProbs, params, KOs, KIs):
 # wrapper to run update for a single node in C... mainly used for testing, no longer used at all in code
 def updateBool2(currentNode,oldValue,nodeIndividual,model):
 	# load in library
-	updateBooler=ctypes.cdll.LoadLibrary('./testRun.so')
+	updateBooler=ctypes.cdll.LoadLibrary('./simulator.so')
 	updateBool3=updateBooler.updateBool  
 	# save old value and output arrays
 	oldValue=np.array(oldValue,dtype=np.intc)

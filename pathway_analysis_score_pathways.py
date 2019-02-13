@@ -11,6 +11,7 @@ import pandas as pd
 import requests
 import networkx as nx
 import operator
+import math as math
 # import other pieces of our software
 import networkConstructor as nc
 from utils import writeModel, Get_expanded_network
@@ -73,13 +74,15 @@ def makeRA(data,comparison,groups):
 			if mean1==0 and mean2==0:
 				RAdict[element]=0.
 				print('zero mean for '+ element+'.  means: '+str(mean1)+' '+str(mean2)+'. RA set to zero')
-
 			else:
 				print('zero mean for '+ element+'.  means: '+str(mean1)+' '+str(mean2)+'. Low replaced by .1')
 				print(data[element])
-				RAdict[element]=abs(math.log(max(mean1,mean2),2)-math.log(.1,2))
+				if mean1>mean2:
+					RAdict[element]=math.log(mean1,2)-math.log(.1,2)
+				else:
+					RAdict[element]=math.log(.1,2)-math.log(mean2,2)
 		else:
-			differ=abs(math.log(mean1,2)-math.log(mean2,2))
+			differ=math.log(mean1,2)-math.log(mean2,2)
 			RAdict[element]=differ
 	return RAdict
 
@@ -105,10 +108,9 @@ def findPathwayList():
 			pathVals.append(pickle.Unpickler(open( 'pickles/'+code+'_'+str(i)+'_scores1.pickle', "rb" )).load())
 			rules.append(writeModel(bruteOut1, model))
 		graph = nx.read_gpickle("gpickles/"+code+".gpickle")
-		ImportanceVals={}
+		ImportanceVals={} # average importance vals over trials
 		for node in range(len(storeModel[1])): 
-			# ImportanceVals[storeModel[1][node]]=math.log(np.mean([pathVals[i][node] for i in range(5)]),2)
-			ImportanceVals[storeModel[1][node]]=float(np.mean([math.log(1.+pathVals[i][node] ,2) for i in range(5)]))
+			ImportanceVals[storeModel[1][node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
 		# add nodes removed during network simplification back in
 		pathways.append([code,ImportanceVals, rules, graph])
 	return pathways
@@ -175,7 +177,9 @@ def analyze_pathways(diffName, matrixName, dataName, delmited):
 		RAvals.append(makeRA(data,comparison,groups))
 		if not os.path.exists(comparison[0]+'-'+comparison[1]):
 			os.makedirs(comparison[0]+'-'+comparison[1])
-	
+	CVdict={}
+	for keyVal in data.keys():
+		CVdict[keyVal]=np.std(data[keyVal])
 	# iterate over pathways and calculate scores for pathway
 	for pathway in pathList:
 		print(pathway[0])
@@ -185,7 +189,7 @@ def analyze_pathways(diffName, matrixName, dataName, delmited):
 		z_scores=[]
 		# iterate over comparisons for each pathway and calculate z score
 		for RAval in RAvals:
-			z_scores.append(scorePathway(RAval,pathway[1]))
+			z_scores.append(scorePathway(RAval,pathway[1], CVdict))
 		pvals=scipy.stats.norm.sf(z_scores) # calculate p value
 		# store p values
 		tempdict={'pathway':pathDict[pathway[0][3:]],'code':pathway[0][3:] }
@@ -197,17 +201,18 @@ def analyze_pathways(diffName, matrixName, dataName, delmited):
 	df.to_csv(path_or_buf='pvalues.csv')
 
 # calculate z score for a given pathway
-def scorePathway(RAs,pathImportances):
+def scorePathway(RAs,pathImportances, CVdict):
 	score=0
 	allNodes=RAs.keys()
 	for node in pathImportances:
-		score+=RAs[node]*pathImportances[node]
-	print('Relative abundance mean difference: '+ str(np.mean([RAs[value] for value in allNodes])))
+		score+=abs(RAs[node])*math.log(pathImportances[node],2)*CVdict[node]
+	print(score)
+	print('Relative abundance mean difference: '+ str(np.mean([abs(RAs[value]) for value in allNodes])))
 	randomScores=[]
 	for i in range(1000):
 		tempscore=0
 		for node in pathImportances:
-			tempscore+=RAs[allNodes[randint(0,len(allNodes)-1)]]*pathImportances[node]
+			tempscore+=abs(RAs[allNodes[randint(0,len(allNodes)-1)]])*math.log(pathImportances[node],2)*CVdict[node]
 		randomScores.append(tempscore)
 	meaner=np.mean(randomScores)
 	stdev=np.std(randomScores)

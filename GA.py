@@ -60,12 +60,11 @@ def cxTwoPointNode(ind1, ind2):
 	"""Executes a two-point crossover on the input :term:`sequence`
     individuals. The two individuals are modified in place and both keep
     their original length. 
-    
-    :param ind1: The first individual participating in the crossover.
-    :param ind2: The second individual participating in the crossover.
     :returns: A tuple of two individuals.
     This function uses the :func:`~random.randint` function from the Python 
     base :mod:`random` module.
+
+    Modified to cross over between rules
     """
 	size = len(ind1[0].nodeList)
 	cxpointer1 = randint(1, size)
@@ -172,8 +171,6 @@ def mutFlipBitAdapt(indyIn, genfrac, mutModel):
 	errors=list(indyIn.fitness.values) # get errors
 	individual=indyIn[1]
 	model=indyIn[0]
-	# if error is relatively low, do a totally random mutation
-
 	# get rid of errors in nodes that can't be changed
 	errorNodes=0
 	for j in xrange(len(errors)):
@@ -236,6 +233,7 @@ def mutFlipBitAdapt(indyIn, genfrac, mutModel):
 		print('did not actually check')
 	return indyIn,
 def selNSGA2(individuals, k):
+	# NSGA2 selection taken from deap
 	"""Apply NSGA-II selection operator on the *individuals*. Usually, the
 	size of *individuals* will be larger than *k* because any individual
 	present in *individuals* will appear in the returned list at most once.
@@ -264,6 +262,7 @@ def selNSGA2(individuals, k):
 		
 	return chosen
 
+# taken from deap and modified slightly to make pareto sorting less strict
 def sortNondominatedAdapt(individuals, k, first_front_only=False):
 	"""Sort the first *k* *individuals* into different nondomination levels 
 	using the "Fast Nondominated Sorting Approach" proposed by Deb et al.,
@@ -328,7 +327,7 @@ def sortNondominatedAdapt(individuals, k, first_front_only=False):
 			next_front = []
 	
 	return fronts
-
+# taken from deap and modified slightly to make pareto sorting less strict
 def dominated(ind1, ind2):
 	"""Return true if each objective of *self* is not strictly worse than 
 		the corresponding objective of *other* and at least one objective is 
@@ -346,7 +345,7 @@ def dominated(ind1, ind2):
 	elif mean1 < mean2:
 		return False                
 	return not_equal
-
+# taken from deap
 def assignCrowdingDist(individuals):
 	"""Assign a crowding distance to each individual's fitness. The 
 	crowding distance can be retrieve via the :attr:`crowding_dist` 
@@ -469,26 +468,28 @@ def localSearch(model, indy, newSSS, params, KOlist, KIlist, boolC):
 	return individual, equivs, devs
 # local search function
 def checkNodePossibilities(node, indy, newSSS, cellNum, model,params, KOlist, KIlist, boolC ):
-	tol=.01*len(newSSS)
-	end=findEnd(node,model)
-	start=model.individualParse[node]
+	tol=.01*len(newSSS) # set tolerance for equivalence
+	end=findEnd(node,model) # find end of model for this node
+	start=model.individualParse[node] # find start of model for this node
 	truth=list(indy[start:end])
 	equivs=[truth] 	#add if
 	if (end-start)==0:
 		return truth, equivs, 0.
 	indOptions=[]
 	indErrors=[]
+	# iterate over possibilities for this node
 	for i in range(1,2**(end-start)):
 		tempultimate=list(indy)
 		tempInd=bitList(i, len(truth))
-		tempultimate[start:end]=tempInd
+		tempultimate[start:end]=tempInd # set rule to one being checked
 		currentsumtemp=evaluateByNode(tempultimate, cellNum, model,  newSSS, params,KOlist, KIlist , boolC)
-		currentsum=currentsumtemp[node]
+		currentsum=currentsumtemp[node] # save the error found
 		indOptions.append(tempInd)
 		indErrors.append(currentsum)
 		gc.collect()
 	minny= min(indErrors)
 	equivs=[]
+	# find the minimum error individual
 	for i in range(len(indOptions)):
 		if indErrors[i]< minny+tol:
 			equivs.append(indOptions[i])

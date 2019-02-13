@@ -16,16 +16,16 @@ def calcImportance(individual,params,model, sss,knockoutLists, knockinLists, boo
 	for node in range(len(model.nodeList)):
 		SSEs=[] # add SSE across samples
 		nodeValues=[sss[j][model.nodeList[node]]for j in range(0,len(sss))]
-		for j in range(0,len(sss)): # change each sample to max and min and observe differences
+		for j in range(0,len(sss)): # knock each node out and in to observe differences
 			ss=sss[j]
-			# change value to max
 			initValues=list(model.initValueList[j])
-			initValues[node]=max(nodeValues)
-			boolValues1=NPsync(individual, model, params.cells, initValues, params, knockoutLists[j], knockinLists[j], boolC)
-			# change value to min
-			initValues[node]=min(nodeValues)
-			boolValues2=NPsync(individual, model, params.cells, initValues, params, knockoutLists[j], knockinLists[j], boolC)
-			# sum differences across, nodes, samples for max vs min value at node j
+			knockerOuter=list(knockoutLists[j])
+			knockerOuter.append(node) # knock out node
+			boolValues1=NPsync(individual, model, params.cells, initValues, params, knockerOuter, knockinLists[j], boolC)
+			knockerInner=list(knockinLists[j])
+			knockerInner.append(node) # knock in node
+			boolValues2=NPsync(individual, model, params.cells, initValues, params, knockoutLists[j], knockerInner, boolC)
+			# find difference between knockout and knockin
 			SSE=0
 			for i in range(0, len(model.nodeList)):
 				SSE+=(boolValues1[i]-boolValues2[i])**2
