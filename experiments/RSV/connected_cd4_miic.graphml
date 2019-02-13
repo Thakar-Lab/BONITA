@@ -1,0 +1,2810 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+    <key attr.name="SUID" attr.type="long" for="node" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="node" id="shared name"/>
+    <key attr.name="label" attr.type="string" for="node" id="label"/>
+    <key attr.name="weight" attr.type="double" for="node" id="weight"/>
+    <key attr.name="name" attr.type="string" for="node" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="node" id="selected"/>
+    <key attr.name="SUID" attr.type="long" for="edge" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="edge" id="shared name"/>
+    <key attr.name="shared interaction" attr.type="string" for="edge" id="shared interaction"/>
+    <key attr.name="sourceArrowShape" attr.type="string" for="edge" id="sourceArrowShape"/>
+    <key attr.name="targetArrowShape" attr.type="string" for="edge" id="targetArrowShape"/>
+    <key attr.name="label" attr.type="string" for="edge" id="label"/>
+    <key attr.name="edgeType" attr.type="int" for="edge" id="edgeType"/>
+    <key attr.name="weight" attr.type="double" for="edge" id="weight"/>
+    <key attr.name="upstream" attr.type="string" for="edge" id="upstream"/>
+    <key attr.name="complexity" attr.type="double" for="edge" id="complexity"/>
+    <key attr.name="confidenceRatio" attr.type="double" for="edge" id="confidenceRatio"/>
+    <key attr.name="log_confidence" attr.type="double" for="edge" id="log_confidence"/>
+    <key attr.name="sign" attr.type="string" for="edge" id="sign"/>
+    <key attr.name="partialCorrelation" attr.type="double" for="edge" id="partialCorrelation"/>
+    <key attr.name="name" attr.type="string" for="edge" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="edge" id="selected"/>
+    <key attr.name="interaction" attr.type="string" for="edge" id="interaction"/>
+    <key attr.name="SUID" attr.type="long" for="graph" id="SUID"/>
+    <key attr.name="shared name" attr.type="string" for="graph" id="shared name"/>
+    <key attr.name="name" attr.type="string" for="graph" id="name"/>
+    <key attr.name="selected" attr.type="boolean" for="graph" id="selected"/>
+    <key attr.name="__Annotations" attr.type="string" for="graph" id="__Annotations"/>
+    <graph edgedefault="directed" id="cd4.miic.0.05thresh.100shuffles.graphml_1(1)">
+        <node id="3179">
+            <data key="SUID">3179</data>
+            <data key="shared name">PHC3</data>
+            <data key="label">PHC3</data>
+            <data key="weight">0.5</data>
+            <data key="name">PHC3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3050">
+            <data key="SUID">3050</data>
+            <data key="shared name">UBE2D3</data>
+            <data key="label">UBE2D3</data>
+            <data key="weight">0.5</data>
+            <data key="name">UBE2D3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3177">
+            <data key="SUID">3177</data>
+            <data key="shared name">NDUFA12</data>
+            <data key="label">NDUFA12</data>
+            <data key="weight">0.5</data>
+            <data key="name">NDUFA12</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2530">
+            <data key="SUID">2530</data>
+            <data key="shared name">CCT4</data>
+            <data key="label">CCT4</data>
+            <data key="weight">0.5</data>
+            <data key="name">CCT4</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3041">
+            <data key="SUID">3041</data>
+            <data key="shared name">TRAF3IP3</data>
+            <data key="label">TRAF3IP3</data>
+            <data key="weight">0.5</data>
+            <data key="name">TRAF3IP3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2784">
+            <data key="SUID">2784</data>
+            <data key="shared name">ERGIC3</data>
+            <data key="label">ERGIC3</data>
+            <data key="weight">0.5</data>
+            <data key="name">ERGIC3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3295">
+            <data key="SUID">3295</data>
+            <data key="shared name">FAM101B</data>
+            <data key="label">FAM101B</data>
+            <data key="weight">0.5</data>
+            <data key="name">FAM101B</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3166">
+            <data key="SUID">3166</data>
+            <data key="shared name">WDR1</data>
+            <data key="label">WDR1</data>
+            <data key="weight">0.5</data>
+            <data key="name">WDR1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2653">
+            <data key="SUID">2653</data>
+            <data key="shared name">SPATA13</data>
+            <data key="label">SPATA13</data>
+            <data key="weight">0.5</data>
+            <data key="name">SPATA13</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3162">
+            <data key="SUID">3162</data>
+            <data key="shared name">SP110</data>
+            <data key="label">SP110</data>
+            <data key="weight">0.5</data>
+            <data key="name">SP110</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2777">
+            <data key="SUID">2777</data>
+            <data key="shared name">EEF1G</data>
+            <data key="label">EEF1G</data>
+            <data key="weight">0.5</data>
+            <data key="name">EEF1G</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2904">
+            <data key="SUID">2904</data>
+            <data key="shared name">NOSIP</data>
+            <data key="label">NOSIP</data>
+            <data key="weight">0.5</data>
+            <data key="name">NOSIP</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3284">
+            <data key="SUID">3284</data>
+            <data key="shared name">GNB2L1</data>
+            <data key="label">GNB2L1</data>
+            <data key="weight">0.5</data>
+            <data key="name">GNB2L1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3155">
+            <data key="SUID">3155</data>
+            <data key="shared name">TRIM22</data>
+            <data key="label">TRIM22</data>
+            <data key="weight">0.5</data>
+            <data key="name">TRIM22</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3282">
+            <data key="SUID">3282</data>
+            <data key="shared name">RPL6</data>
+            <data key="label">RPL6</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPL6</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3151">
+            <data key="SUID">3151</data>
+            <data key="shared name">SAMD9</data>
+            <data key="label">SAMD9</data>
+            <data key="weight">0.5</data>
+            <data key="name">SAMD9</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2511">
+            <data key="SUID">2511</data>
+            <data key="shared name">ARPC1B</data>
+            <data key="label">ARPC1B</data>
+            <data key="weight">0.5</data>
+            <data key="name">ARPC1B</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3405">
+            <data key="SUID">3405</data>
+            <data key="shared name">CD96</data>
+            <data key="label">CD96</data>
+            <data key="weight">0.5</data>
+            <data key="name">CD96</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3147">
+            <data key="SUID">3147</data>
+            <data key="shared name">PARP9</data>
+            <data key="label">PARP9</data>
+            <data key="weight">0.5</data>
+            <data key="name">PARP9</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3142">
+            <data key="SUID">3142</data>
+            <data key="shared name">RBM3</data>
+            <data key="label">RBM3</data>
+            <data key="weight">0.5</data>
+            <data key="name">RBM3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3014">
+            <data key="SUID">3014</data>
+            <data key="shared name">TAX1BP1</data>
+            <data key="label">TAX1BP1</data>
+            <data key="weight">0.5</data>
+            <data key="name">TAX1BP1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3141">
+            <data key="SUID">3141</data>
+            <data key="shared name">XAF1</data>
+            <data key="label">XAF1</data>
+            <data key="weight">0.5</data>
+            <data key="name">XAF1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3394">
+            <data key="SUID">3394</data>
+            <data key="shared name">SIRPG</data>
+            <data key="label">SIRPG</data>
+            <data key="weight">0.5</data>
+            <data key="name">SIRPG</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3138">
+            <data key="SUID">3138</data>
+            <data key="shared name">RSAD2</data>
+            <data key="label">RSAD2</data>
+            <data key="weight">0.5</data>
+            <data key="name">RSAD2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3136">
+            <data key="SUID">3136</data>
+            <data key="shared name">MX1</data>
+            <data key="label">MX1</data>
+            <data key="weight">0.5</data>
+            <data key="name">MX1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3134">
+            <data key="SUID">3134</data>
+            <data key="shared name">OAS2</data>
+            <data key="label">OAS2</data>
+            <data key="weight">0.5</data>
+            <data key="name">OAS2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3133">
+            <data key="SUID">3133</data>
+            <data key="shared name">TRAT1</data>
+            <data key="label">TRAT1</data>
+            <data key="weight">0.5</data>
+            <data key="name">TRAT1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3130">
+            <data key="SUID">3130</data>
+            <data key="shared name">EIF4B</data>
+            <data key="label">EIF4B</data>
+            <data key="weight">0.5</data>
+            <data key="name">EIF4B</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3257">
+            <data key="SUID">3257</data>
+            <data key="shared name">STAT3</data>
+            <data key="label">STAT3</data>
+            <data key="weight">0.5</data>
+            <data key="name">STAT3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3383">
+            <data key="SUID">3383</data>
+            <data key="shared name">LITAF</data>
+            <data key="label">LITAF</data>
+            <data key="weight">0.5</data>
+            <data key="name">LITAF</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3126">
+            <data key="SUID">3126</data>
+            <data key="shared name">SP100</data>
+            <data key="label">SP100</data>
+            <data key="weight">0.5</data>
+            <data key="name">SP100</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3381">
+            <data key="SUID">3381</data>
+            <data key="shared name">QARS</data>
+            <data key="label">QARS</data>
+            <data key="weight">0.5</data>
+            <data key="name">QARS</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3124">
+            <data key="SUID">3124</data>
+            <data key="shared name">DDX60</data>
+            <data key="label">DDX60</data>
+            <data key="weight">0.5</data>
+            <data key="name">DDX60</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3378">
+            <data key="SUID">3378</data>
+            <data key="shared name">PIM2</data>
+            <data key="label">PIM2</data>
+            <data key="weight">0.5</data>
+            <data key="name">PIM2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3122">
+            <data key="SUID">3122</data>
+            <data key="shared name">PLAC8</data>
+            <data key="label">PLAC8</data>
+            <data key="weight">0.5</data>
+            <data key="name">PLAC8</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3376">
+            <data key="SUID">3376</data>
+            <data key="shared name">RPL36AL</data>
+            <data key="label">RPL36AL</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPL36AL</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3119">
+            <data key="SUID">3119</data>
+            <data key="shared name">EIF3L</data>
+            <data key="label">EIF3L</data>
+            <data key="weight">0.5</data>
+            <data key="name">EIF3L</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3118">
+            <data key="SUID">3118</data>
+            <data key="shared name">IFI44</data>
+            <data key="label">IFI44</data>
+            <data key="weight">0.5</data>
+            <data key="name">IFI44</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3117">
+            <data key="SUID">3117</data>
+            <data key="shared name">IFI44L</data>
+            <data key="label">IFI44L</data>
+            <data key="weight">0.5</data>
+            <data key="name">IFI44L</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3116">
+            <data key="SUID">3116</data>
+            <data key="shared name">IRF9</data>
+            <data key="label">IRF9</data>
+            <data key="weight">0.5</data>
+            <data key="name">IRF9</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2602">
+            <data key="SUID">2602</data>
+            <data key="shared name">MYC</data>
+            <data key="label">MYC</data>
+            <data key="weight">0.5</data>
+            <data key="name">MYC</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3111">
+            <data key="SUID">3111</data>
+            <data key="shared name">MX2</data>
+            <data key="label">MX2</data>
+            <data key="weight">0.5</data>
+            <data key="name">MX2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3110">
+            <data key="SUID">3110</data>
+            <data key="shared name">RPS4X</data>
+            <data key="label">RPS4X</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPS4X</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3109">
+            <data key="SUID">3109</data>
+            <data key="shared name">SHISA5</data>
+            <data key="label">SHISA5</data>
+            <data key="weight">0.5</data>
+            <data key="name">SHISA5</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2596">
+            <data key="SUID">2596</data>
+            <data key="shared name">MGEA5</data>
+            <data key="label">MGEA5</data>
+            <data key="weight">0.5</data>
+            <data key="name">MGEA5</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3107">
+            <data key="SUID">3107</data>
+            <data key="shared name">OAS1</data>
+            <data key="label">OAS1</data>
+            <data key="weight">0.5</data>
+            <data key="name">OAS1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3362">
+            <data key="SUID">3362</data>
+            <data key="shared name">ARID5B</data>
+            <data key="label">ARID5B</data>
+            <data key="weight">0.5</data>
+            <data key="name">ARID5B</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3106">
+            <data key="SUID">3106</data>
+            <data key="shared name">IFITM1</data>
+            <data key="label">IFITM1</data>
+            <data key="weight">0.5</data>
+            <data key="name">IFITM1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2977">
+            <data key="SUID">2977</data>
+            <data key="shared name">RPS3</data>
+            <data key="label">RPS3</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPS3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3232">
+            <data key="SUID">3232</data>
+            <data key="shared name">YPEL5</data>
+            <data key="label">YPEL5</data>
+            <data key="weight">0.5</data>
+            <data key="name">YPEL5</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3104">
+            <data key="SUID">3104</data>
+            <data key="shared name">RPL4</data>
+            <data key="label">RPL4</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPL4</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2975">
+            <data key="SUID">2975</data>
+            <data key="shared name">RPL3</data>
+            <data key="label">RPL3</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPL3</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3230">
+            <data key="SUID">3230</data>
+            <data key="shared name">ARL4C</data>
+            <data key="label">ARL4C</data>
+            <data key="weight">0.5</data>
+            <data key="name">ARL4C</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2974">
+            <data key="SUID">2974</data>
+            <data key="shared name">RPL10</data>
+            <data key="label">RPL10</data>
+            <data key="weight">0.5</data>
+            <data key="name">RPL10</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2718">
+            <data key="SUID">2718</data>
+            <data key="shared name">C10orf54</data>
+            <data key="label">C10orf54</data>
+            <data key="weight">0.5</data>
+            <data key="name">C10orf54</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3356">
+            <data key="SUID">3356</data>
+            <data key="shared name">SH3KBP1</data>
+            <data key="label">SH3KBP1</data>
+            <data key="weight">0.5</data>
+            <data key="name">SH3KBP1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2844">
+            <data key="SUID">2844</data>
+            <data key="shared name">LGALS3BP</data>
+            <data key="label">LGALS3BP</data>
+            <data key="weight">0.5</data>
+            <data key="name">LGALS3BP</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2842">
+            <data key="SUID">2842</data>
+            <data key="shared name">KLF6</data>
+            <data key="label">KLF6</data>
+            <data key="weight">0.5</data>
+            <data key="name">KLF6</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2584">
+            <data key="SUID">2584</data>
+            <data key="shared name">KCNQ1OT1</data>
+            <data key="label">KCNQ1OT1</data>
+            <data key="weight">0.5</data>
+            <data key="name">KCNQ1OT1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2835">
+            <data key="SUID">2835</data>
+            <data key="shared name">ITGB2</data>
+            <data key="label">ITGB2</data>
+            <data key="weight">0.5</data>
+            <data key="name">ITGB2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3346">
+            <data key="SUID">3346</data>
+            <data key="shared name">G3BP2</data>
+            <data key="label">G3BP2</data>
+            <data key="weight">0.5</data>
+            <data key="name">G3BP2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3082">
+            <data key="SUID">3082</data>
+            <data key="shared name">IFI16</data>
+            <data key="label">IFI16</data>
+            <data key="weight">0.5</data>
+            <data key="name">IFI16</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2949">
+            <data key="SUID">2949</data>
+            <data key="shared name">PTMA</data>
+            <data key="label">PTMA</data>
+            <data key="weight">0.5</data>
+            <data key="name">PTMA</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2562">
+            <data key="SUID">2562</data>
+            <data key="shared name">FKBP5</data>
+            <data key="label">FKBP5</data>
+            <data key="weight">0.5</data>
+            <data key="name">FKBP5</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2689">
+            <data key="SUID">2689</data>
+            <data key="shared name">ACTB</data>
+            <data key="label">ACTB</data>
+            <data key="weight">0.5</data>
+            <data key="name">ACTB</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3198">
+            <data key="SUID">3198</data>
+            <data key="shared name">C20orf111</data>
+            <data key="label">C20orf111</data>
+            <data key="weight">0.5</data>
+            <data key="name">C20orf111</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3067">
+            <data key="SUID">3067</data>
+            <data key="shared name">ZEB1</data>
+            <data key="label">ZEB1</data>
+            <data key="weight">0.5</data>
+            <data key="name">ZEB1</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2808">
+            <data key="SUID">2808</data>
+            <data key="shared name">FTL</data>
+            <data key="label">FTL</data>
+            <data key="weight">0.5</data>
+            <data key="name">FTL</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3063">
+            <data key="SUID">3063</data>
+            <data key="shared name">XRN2</data>
+            <data key="label">XRN2</data>
+            <data key="weight">0.5</data>
+            <data key="name">XRN2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="3062">
+            <data key="SUID">3062</data>
+            <data key="shared name">XRCC6</data>
+            <data key="label">XRCC6</data>
+            <data key="weight">0.5</data>
+            <data key="name">XRCC6</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2674">
+            <data key="SUID">2674</data>
+            <data key="shared name">WASF2</data>
+            <data key="label">WASF2</data>
+            <data key="weight">0.5</data>
+            <data key="name">WASF2</data>
+            <data key="selected">false</data>
+        </node>
+        <node id="2801">
+            <data key="SUID">2801</data>
+            <data key="shared name">FKBP1A</data>
+            <data key="label">FKBP1A</data>
+            <data key="weight">0.5</data>
+            <data key="name">FKBP1A</data>
+            <data key="selected">false</data>
+        </node>
+        <edge source="3179" target="3232">
+            <data key="SUID">3501</data>
+            <data key="shared name">PHC3 (-) YPEL5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">YPEL5--&gt;PHC3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.479132</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.22413</data>
+            <data key="confidenceRatio">0.0252701</data>
+            <data key="log_confidence">3.69783</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.714142842854285</data>
+            <data key="name">PHC3 (-) YPEL5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3179" target="3346">
+            <data key="SUID">3485</data>
+            <data key="shared name">PHC3 (-) G3BP2</data>
+            <data key="shared interaction">-</data>
+            <data key="label">G3BP2---PHC3</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0147268</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">PHC3 (-) G3BP2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3179" target="3257">
+            <data key="SUID">3483</data>
+            <data key="shared name">PHC3 (-) STAT3</data>
+            <data key="shared interaction">-</data>
+            <data key="label">STAT3---PHC3</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0148764</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">PHC3 (-) STAT3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3179" target="3198">
+            <data key="SUID">3482</data>
+            <data key="shared name">PHC3 (-) C20orf111</data>
+            <data key="shared interaction">-</data>
+            <data key="label">C20orf111---PHC3</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0144365</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">PHC3 (-) C20orf111</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2530" target="3383">
+            <data key="SUID">3490</data>
+            <data key="shared name">CCT4 (-) LITAF</data>
+            <data key="shared interaction">-</data>
+            <data key="label">LITAF---CCT4</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.609636</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.64094</data>
+            <data key="confidenceRatio">0.0194084</data>
+            <data key="log_confidence">4.02409</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.625577284414572</data>
+            <data key="name">CCT4 (-) LITAF</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3041" target="3050">
+            <data key="SUID">3530</data>
+            <data key="shared name">TRAF3IP3 (-) UBE2D3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">UBE2D3--&gt;TRAF3IP3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.223724</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.90884</data>
+            <data key="confidenceRatio">0.0479449</data>
+            <data key="log_confidence">3.05931</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.0802345326631663</data>
+            <data key="name">TRAF3IP3 (-) UBE2D3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3041" target="3376">
+            <data key="SUID">3497</data>
+            <data key="shared name">TRAF3IP3 (-) RPL36AL</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">RPL36AL--|TRAF3IP3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.499564</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.86409</data>
+            <data key="confidenceRatio">0.0249899</data>
+            <data key="log_confidence">3.74891</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.504897336673574</data>
+            <data key="name">TRAF3IP3 (-) RPL36AL</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3041" target="3383">
+            <data key="SUID">3473</data>
+            <data key="shared name">TRAF3IP3 (-) LITAF</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">LITAF--&gt;TRAF3IP3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.722492</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.28335</data>
+            <data key="confidenceRatio">0.0142126</data>
+            <data key="log_confidence">4.30623</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.562520177415983</data>
+            <data key="name">TRAF3IP3 (-) LITAF</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3041" target="3062">
+            <data key="SUID">3439</data>
+            <data key="shared name">TRAF3IP3 (-) XRCC6</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">XRCC6--&gt;TRAF3IP3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.107172</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.59287</data>
+            <data key="confidenceRatio">4.32671E-4</data>
+            <data key="log_confidence">7.76793</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.38936855467576</data>
+            <data key="name">TRAF3IP3 (-) XRCC6</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3041" target="3133">
+            <data key="SUID">3436</data>
+            <data key="shared name">TRAF3IP3 (-) TRAT1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">TRAT1--&gt;TRAF3IP3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.3151</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.41765</data>
+            <data key="confidenceRatio">2.61721E-4</data>
+            <data key="log_confidence">8.28775</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.633234886784763</data>
+            <data key="name">TRAF3IP3 (-) TRAT1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2784" target="3142">
+            <data key="SUID">3505</data>
+            <data key="shared name">ERGIC3 (-) RBM3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RBM3--&gt;ERGIC3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.476036</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.35922</data>
+            <data key="confidenceRatio">0.0268349</data>
+            <data key="log_confidence">3.69009</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.452929112714982</data>
+            <data key="name">ERGIC3 (-) RBM3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2784" target="3104">
+            <data key="SUID">3437</data>
+            <data key="shared name">ERGIC3 (-) RPL4</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPL4--&gt;ERGIC3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.144772</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.55727</data>
+            <data key="confidenceRatio">4.10274E-4</data>
+            <data key="log_confidence">7.86193</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.570306234399014</data>
+            <data key="name">ERGIC3 (-) RPL4</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3295" target="2674">
+            <data key="SUID">3513</data>
+            <data key="shared name">FAM101B (-) WASF2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">WASF2--&gt;FAM101B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.413784</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.08407</data>
+            <data key="confidenceRatio">0.0294604</data>
+            <data key="log_confidence">3.53446</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.553283335172488</data>
+            <data key="name">FAM101B (-) WASF2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3295" target="3376">
+            <data key="SUID">3511</data>
+            <data key="shared name">FAM101B (-) RPL36AL</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPL36AL--&gt;FAM101B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.413784</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.08407</data>
+            <data key="confidenceRatio">0.0297521</data>
+            <data key="log_confidence">3.53446</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.553283335172488</data>
+            <data key="name">FAM101B (-) RPL36AL</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3295" target="3122">
+            <data key="SUID">3491</data>
+            <data key="shared name">FAM101B (-) PLAC8</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PLAC8--&gt;FAM101B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.607884</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.05285</data>
+            <data key="confidenceRatio">0.0184652</data>
+            <data key="log_confidence">4.01971</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.612788873986492</data>
+            <data key="name">FAM101B (-) PLAC8</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3162" target="3119">
+            <data key="SUID">3528</data>
+            <data key="shared name">SP110 (-) EIF3L</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">EIF3L--|SP110</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.253544</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.24828</data>
+            <data key="confidenceRatio">0.0454398</data>
+            <data key="log_confidence">3.13386</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.446745475120604</data>
+            <data key="name">SP110 (-) EIF3L</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2777" target="3284">
+            <data key="SUID">3416</data>
+            <data key="shared name">EEF1G (-) GNB2L1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">GNB2L1--&gt;EEF1G</data>
+            <data key="edgeType">2</data>
+            <data key="weight">6.27072</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">60.0953</data>
+            <data key="confidenceRatio">3.62431E-7</data>
+            <data key="log_confidence">15.6768</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.862455970015352</data>
+            <data key="name">EEF1G (-) GNB2L1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2904" target="2584">
+            <data key="SUID">3507</data>
+            <data key="shared name">NOSIP (-) KCNQ1OT1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">KCNQ1OT1--|NOSIP</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.442992</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.55792</data>
+            <data key="confidenceRatio">0.0279418</data>
+            <data key="log_confidence">3.60748</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.341612505244145</data>
+            <data key="name">NOSIP (-) KCNQ1OT1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2904" target="2949">
+            <data key="SUID">3470</data>
+            <data key="shared name">NOSIP (-) PTMA</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PTMA--&gt;NOSIP</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.865136</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">9.51276</data>
+            <data key="confidenceRatio">0.00962855</data>
+            <data key="log_confidence">4.66284</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.575064122617586</data>
+            <data key="name">NOSIP (-) PTMA</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2904" target="2511">
+            <data key="SUID">3433</data>
+            <data key="shared name">NOSIP (-) ARPC1B</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ARPC1B--&gt;NOSIP</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.007872</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.52922</data>
+            <data key="confidenceRatio">4.64734E-5</data>
+            <data key="log_confidence">10.01968</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.673522441947999</data>
+            <data key="name">NOSIP (-) ARPC1B</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3284" target="2784">
+            <data key="SUID">3429</data>
+            <data key="shared name">GNB2L1 (-) ERGIC3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ERGIC3--&gt;GNB2L1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.352188</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">9.58963</data>
+            <data key="confidenceRatio">1.98767E-5</data>
+            <data key="log_confidence">10.88047</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.59047169036446</data>
+            <data key="name">GNB2L1 (-) ERGIC3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3284" target="3381">
+            <data key="SUID">3428</data>
+            <data key="shared name">GNB2L1 (-) QARS</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">QARS--&gt;GNB2L1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.53608</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">16.0235</data>
+            <data key="confidenceRatio">1.21808E-5</data>
+            <data key="log_confidence">11.3402</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.62106172795421</data>
+            <data key="name">GNB2L1 (-) QARS</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3155" target="2844">
+            <data key="SUID">3462</data>
+            <data key="shared name">TRIM22 (-) LGALS3BP</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">LGALS3BP--&gt;TRIM22</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.055972</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.26302</data>
+            <data key="confidenceRatio">0.00605842</data>
+            <data key="log_confidence">5.13993</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.525485580262357</data>
+            <data key="name">TRIM22 (-) LGALS3BP</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3151" target="3111">
+            <data key="SUID">3512</data>
+            <data key="shared name">SAMD9 (-) MX2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">MX2--&gt;SAMD9</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.413784</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.08407</data>
+            <data key="confidenceRatio">0.0297521</data>
+            <data key="log_confidence">3.53446</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.553283335172488</data>
+            <data key="name">SAMD9 (-) MX2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2511" target="2689">
+            <data key="SUID">3458</data>
+            <data key="shared name">ARPC1B (-) ACTB</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ACTB--&gt;ARPC1B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.21336</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">27.0127</data>
+            <data key="confidenceRatio">0.00431519</data>
+            <data key="log_confidence">5.5334</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.767029020557118</data>
+            <data key="name">ARPC1B (-) ACTB</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3405" target="3041">
+            <data key="SUID">3457</data>
+            <data key="shared name">CD96 (-) TRAF3IP3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">TRAF3IP3--&gt;CD96</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.259408</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.31147</data>
+            <data key="confidenceRatio">0.003702</data>
+            <data key="log_confidence">5.64852</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.531615023954786</data>
+            <data key="name">CD96 (-) TRAF3IP3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3147" target="3118">
+            <data key="SUID">3521</data>
+            <data key="shared name">PARP9 (-) IFI44</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">IFI44--&gt;PARP9</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.317804</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.62745</data>
+            <data key="confidenceRatio">0.0389622</data>
+            <data key="log_confidence">3.29451</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.317161971201359</data>
+            <data key="name">PARP9 (-) IFI44</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3147" target="3116">
+            <data key="SUID">3520</data>
+            <data key="shared name">PARP9 (-) IRF9</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">IRF9--&gt;PARP9</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.317804</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.62745</data>
+            <data key="confidenceRatio">0.0374469</data>
+            <data key="log_confidence">3.29451</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.317161971201359</data>
+            <data key="name">PARP9 (-) IRF9</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="3346">
+            <data key="SUID">3525</data>
+            <data key="shared name">RBM3 (-) G3BP2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">G3BP2--&gt;RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.293548</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.68809</data>
+            <data key="confidenceRatio">0.0401765</data>
+            <data key="log_confidence">3.23387</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.277979724571285</data>
+            <data key="name">RBM3 (-) G3BP2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="3257">
+            <data key="SUID">3524</data>
+            <data key="shared name">RBM3 (-) STAT3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">STAT3--&gt;RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.293548</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.68809</data>
+            <data key="confidenceRatio">0.0401765</data>
+            <data key="log_confidence">3.23387</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.277979724571285</data>
+            <data key="name">RBM3 (-) STAT3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="3198">
+            <data key="SUID">3523</data>
+            <data key="shared name">RBM3 (-) C20orf111</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">C20orf111--&gt;RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.293548</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.68809</data>
+            <data key="confidenceRatio">0.0401765</data>
+            <data key="log_confidence">3.23387</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.277979724571285</data>
+            <data key="name">RBM3 (-) C20orf111</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="3179">
+            <data key="SUID">3522</data>
+            <data key="shared name">RBM3 (-) PHC3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PHC3--&gt;RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.293548</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.68809</data>
+            <data key="confidenceRatio">0.0405739</data>
+            <data key="log_confidence">3.23387</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.277979724571285</data>
+            <data key="name">RBM3 (-) PHC3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="2653">
+            <data key="SUID">3519</data>
+            <data key="shared name">RBM3 (-) SPATA13</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SPATA13--&gt;RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.323868</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.09888</data>
+            <data key="confidenceRatio">0.0392956</data>
+            <data key="log_confidence">3.30967</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.384197019895667</data>
+            <data key="name">RBM3 (-) SPATA13</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3142" target="2602">
+            <data key="SUID">3450</data>
+            <data key="shared name">RBM3 (-) MYC</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">MYC--|RBM3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.61576</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.46527</data>
+            <data key="confidenceRatio">0.0014806</data>
+            <data key="log_confidence">6.5394</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.505860392640208</data>
+            <data key="name">RBM3 (-) MYC</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3014" target="3063">
+            <data key="SUID">3529</data>
+            <data key="shared name">TAX1BP1 (-) XRN2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">XRN2--&gt;TAX1BP1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.23584</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.40255</data>
+            <data key="confidenceRatio">0.049186</data>
+            <data key="log_confidence">3.0896</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.465979594420545</data>
+            <data key="name">TAX1BP1 (-) XRN2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3014" target="3041">
+            <data key="SUID">3498</data>
+            <data key="shared name">TAX1BP1 (-) TRAF3IP3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">TRAF3IP3--|TAX1BP1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.492592</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.09527</data>
+            <data key="confidenceRatio">0.0257672</data>
+            <data key="log_confidence">3.73148</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.386963007537568</data>
+            <data key="name">TAX1BP1 (-) TRAF3IP3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3141" target="3162">
+            <data key="SUID">3430</data>
+            <data key="shared name">XAF1 (-) SP110</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SP110--&gt;XAF1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.346716</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.46911</data>
+            <data key="confidenceRatio">2.01589E-5</data>
+            <data key="log_confidence">10.86679</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.625964659689017</data>
+            <data key="name">XAF1 (-) SP110</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3141" target="3082">
+            <data key="SUID">3409</data>
+            <data key="shared name">XAF1 (-) IFI16</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">IFI16--&gt;XAF1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.50078</data>
+            <data key="confidenceRatio">5.27411E-11</data>
+            <data key="log_confidence">23.69152</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.891299736421761</data>
+            <data key="name">XAF1 (-) IFI16</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3394" target="2689">
+            <data key="SUID">3472</data>
+            <data key="shared name">SIRPG (-) ACTB</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">ACTB--|SIRPG</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.8338</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">18.1472</data>
+            <data key="confidenceRatio">0.0162221</data>
+            <data key="log_confidence">4.5845</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.113079923460735</data>
+            <data key="name">SIRPG (-) ACTB</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3138" target="3106">
+            <data key="SUID">3432</data>
+            <data key="shared name">RSAD2 (-) IFITM1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">IFITM1--&gt;RSAD2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.188152</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">8.01742</data>
+            <data key="confidenceRatio">3.0344E-5</data>
+            <data key="log_confidence">10.47038</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.536157384546103</data>
+            <data key="name">RSAD2 (-) IFITM1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3136" target="3117">
+            <data key="SUID">3406</data>
+            <data key="shared name">MX1 (-) IFI44L</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">IFI44L--&gt;MX1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">16.8522</data>
+            <data key="confidenceRatio">4.25006E-13</data>
+            <data key="log_confidence">28.4977</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.971437607999342</data>
+            <data key="name">MX1 (-) IFI44L</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3134" target="3138">
+            <data key="SUID">3423</data>
+            <data key="shared name">OAS2 (-) RSAD2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RSAD2--&gt;OAS2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.278496</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.43376</data>
+            <data key="confidenceRatio">1.94782E-6</data>
+            <data key="log_confidence">13.19624</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.727427108120435</data>
+            <data key="name">OAS2 (-) RSAD2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3133" target="2977">
+            <data key="SUID">3460</data>
+            <data key="shared name">TRAT1 (-) RPS3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">RPS3--|TRAT1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.14344</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">19.916</data>
+            <data key="confidenceRatio">0.00501461</data>
+            <data key="log_confidence">5.3586</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.424791118141894</data>
+            <data key="name">TRAT1 (-) RPS3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3130" target="2653">
+            <data key="SUID">3526</data>
+            <data key="shared name">EIF4B (-) SPATA13</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SPATA13--&gt;EIF4B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.280896</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.1179</data>
+            <data key="confidenceRatio">0.0424139</data>
+            <data key="log_confidence">3.20224</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.359882023128918</data>
+            <data key="name">EIF4B (-) SPATA13</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3130" target="3356">
+            <data key="SUID">3508</data>
+            <data key="shared name">EIF4B (-) SH3KBP1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SH3KBP1--&gt;EIF4B</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.425796</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.75349</data>
+            <data key="confidenceRatio">0.0293497</data>
+            <data key="log_confidence">3.56449</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.468779917963411</data>
+            <data key="name">EIF4B (-) SH3KBP1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3257" target="3232">
+            <data key="SUID">3503</data>
+            <data key="shared name">STAT3 (-) YPEL5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">YPEL5--&gt;STAT3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.479132</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.22413</data>
+            <data key="confidenceRatio">0.0247772</data>
+            <data key="log_confidence">3.69783</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.714142842854285</data>
+            <data key="name">STAT3 (-) YPEL5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3257" target="3346">
+            <data key="SUID">3487</data>
+            <data key="shared name">STAT3 (-) G3BP2</data>
+            <data key="shared interaction">-</data>
+            <data key="label">G3BP2---STAT3</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0147268</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">STAT3 (-) G3BP2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3126" target="3136">
+            <data key="SUID">3426</data>
+            <data key="shared name">SP100 (-) MX1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">MX1--&gt;SP100</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.88852</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">10.0043</data>
+            <data key="confidenceRatio">5.20082E-6</data>
+            <data key="log_confidence">12.2213</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.631346166782273</data>
+            <data key="name">SP100 (-) MX1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3381" target="3142">
+            <data key="SUID">3474</data>
+            <data key="shared name">QARS (-) RBM3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RBM3--&gt;QARS</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.716316</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.0668</data>
+            <data key="confidenceRatio">0.0140323</data>
+            <data key="log_confidence">4.29079</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.397265446157533</data>
+            <data key="name">QARS (-) RBM3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3381" target="3126">
+            <data key="SUID">3471</data>
+            <data key="shared name">QARS (-) SP100</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">SP100--|QARS</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.850644</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.50073</data>
+            <data key="confidenceRatio">0.01022</data>
+            <data key="log_confidence">4.62661</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.498870622208872</data>
+            <data key="name">QARS (-) SP100</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3381" target="3133">
+            <data key="SUID">3461</data>
+            <data key="shared name">QARS (-) TRAT1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">TRAT1--|QARS</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.108616</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.4106</data>
+            <data key="confidenceRatio">0.00536716</data>
+            <data key="log_confidence">5.27154</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.49535628679251</data>
+            <data key="name">QARS (-) TRAT1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3124" target="3151">
+            <data key="SUID">3424</data>
+            <data key="shared name">DDX60 (-) SAMD9</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SAMD9--&gt;DDX60</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.062192</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.31862</data>
+            <data key="confidenceRatio">3.24191E-6</data>
+            <data key="log_confidence">12.65548</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.84656167328002</data>
+            <data key="name">DDX60 (-) SAMD9</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3378" target="3362">
+            <data key="SUID">3495</data>
+            <data key="shared name">PIM2 (-) ARID5B</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ARID5B--&gt;PIM2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.557624</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.07097</data>
+            <data key="confidenceRatio">0.0213721</data>
+            <data key="log_confidence">3.89406</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.450092346307514</data>
+            <data key="name">PIM2 (-) ARID5B</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3378" target="3122">
+            <data key="SUID">3494</data>
+            <data key="shared name">PIM2 (-) PLAC8</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PLAC8--&gt;PIM2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.557624</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.07097</data>
+            <data key="confidenceRatio">0.0209954</data>
+            <data key="log_confidence">3.89406</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.46526399843024</data>
+            <data key="name">PIM2 (-) PLAC8</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3378" target="2584">
+            <data key="SUID">3468</data>
+            <data key="shared name">PIM2 (-) KCNQ1OT1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">KCNQ1OT1--|PIM2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.887184</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">9.44354</data>
+            <data key="confidenceRatio">0.00913434</data>
+            <data key="log_confidence">4.71796</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.597905037050798</data>
+            <data key="name">PIM2 (-) KCNQ1OT1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3378" target="3381">
+            <data key="SUID">3431</data>
+            <data key="shared name">PIM2 (-) QARS</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">QARS--|PIM2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.235488</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.72328</data>
+            <data key="confidenceRatio">2.59126E-5</data>
+            <data key="log_confidence">10.58872</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.671044775722638</data>
+            <data key="name">PIM2 (-) QARS</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3378" target="2949">
+            <data key="SUID">3422</data>
+            <data key="shared name">PIM2 (-) PTMA</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PTMA--&gt;PIM2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.3736</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">11.9342</data>
+            <data key="confidenceRatio">1.48377E-6</data>
+            <data key="log_confidence">13.434</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.756426572391723</data>
+            <data key="name">PIM2 (-) PTMA</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3376" target="3230">
+            <data key="SUID">3515</data>
+            <data key="shared name">RPL36AL (-) ARL4C</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ARL4C--&gt;RPL36AL</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.408036</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.31862</data>
+            <data key="confidenceRatio">0.0318047</data>
+            <data key="log_confidence">3.52009</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.511874500122803</data>
+            <data key="name">RPL36AL (-) ARL4C</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3376" target="3177">
+            <data key="SUID">3514</data>
+            <data key="shared name">RPL36AL (-) NDUFA12</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">NDUFA12--&gt;RPL36AL</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.413784</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.08407</data>
+            <data key="confidenceRatio">0.0291744</data>
+            <data key="log_confidence">3.53446</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.553283335172488</data>
+            <data key="name">RPL36AL (-) NDUFA12</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3119" target="3405">
+            <data key="SUID">3518</data>
+            <data key="shared name">EIF3L (-) CD96</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">CD96--&gt;EIF3L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.329968</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.37599</data>
+            <data key="confidenceRatio">0.0362265</data>
+            <data key="log_confidence">3.32492</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.431981912575533</data>
+            <data key="name">EIF3L (-) CD96</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3119" target="3110">
+            <data key="SUID">3442</data>
+            <data key="shared name">EIF3L (-) RPS4X</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPS4X--&gt;EIF3L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.06756</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">24.2805</data>
+            <data key="confidenceRatio">4.72469E-4</data>
+            <data key="log_confidence">7.6689</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.378100757652791</data>
+            <data key="name">EIF3L (-) RPS4X</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3119" target="3130">
+            <data key="SUID">3420</data>
+            <data key="shared name">EIF3L (-) EIF4B</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">EIF4B--&gt;EIF3L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.67044</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">11.7968</data>
+            <data key="confidenceRatio">7.32588E-7</data>
+            <data key="log_confidence">14.1761</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.718667942798222</data>
+            <data key="name">EIF3L (-) EIF4B</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3109">
+            <data key="SUID">3438</data>
+            <data key="shared name">IFI44L (-) SHISA5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SHISA5--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.131744</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.37014</data>
+            <data key="confidenceRatio">4.17863E-4</data>
+            <data key="log_confidence">7.82936</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.564626257249408</data>
+            <data key="name">IFI44L (-) SHISA5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3107">
+            <data key="SUID">3421</data>
+            <data key="shared name">IFI44L (-) OAS1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">OAS1--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.618224</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.40374</data>
+            <data key="confidenceRatio">8.36153E-7</data>
+            <data key="log_confidence">14.04556</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.741192916667911</data>
+            <data key="name">IFI44L (-) OAS1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3124">
+            <data key="SUID">3418</data>
+            <data key="shared name">IFI44L (-) DDX60</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">DDX60--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.89884</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.7055</data>
+            <data key="confidenceRatio">4.12531E-7</data>
+            <data key="log_confidence">14.7471</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.74175931731284</data>
+            <data key="name">IFI44L (-) DDX60</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3155">
+            <data key="SUID">3413</data>
+            <data key="shared name">IFI44L (-) TRIM22</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">TRIM22--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">7.520988</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.82043</data>
+            <data key="confidenceRatio">7.11237E-9</data>
+            <data key="log_confidence">18.80247</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.849431129571402</data>
+            <data key="name">IFI44L (-) TRIM22</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3147">
+            <data key="SUID">3412</data>
+            <data key="shared name">IFI44L (-) PARP9</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PARP9--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.49834</data>
+            <data key="confidenceRatio">6.66512E-10</data>
+            <data key="log_confidence">21.15856</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.890510436039055</data>
+            <data key="name">IFI44L (-) PARP9</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3117" target="3141">
+            <data key="SUID">3407</data>
+            <data key="shared name">IFI44L (-) XAF1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">XAF1--&gt;IFI44L</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">13.3657</data>
+            <data key="confidenceRatio">2.82635E-11</data>
+            <data key="log_confidence">24.3441</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.931612659379906</data>
+            <data key="name">IFI44L (-) XAF1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3116" target="3118">
+            <data key="SUID">3477</data>
+            <data key="shared name">IRF9 (-) IFI44</data>
+            <data key="shared interaction">-</data>
+            <data key="label">IFI44---IRF9</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0147268</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">IRF9 (-) IFI44</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2602" target="3136">
+            <data key="SUID">3506</data>
+            <data key="shared name">MYC (-) MX1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">MX1--&gt;MYC</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.455804</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.8453</data>
+            <data key="confidenceRatio">0.0272567</data>
+            <data key="log_confidence">3.63951</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.240086860125369</data>
+            <data key="name">MYC (-) MX1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2602" target="2689">
+            <data key="SUID">3500</data>
+            <data key="shared name">MYC (-) ACTB</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ACTB--&gt;MYC</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.48552</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">17.2587</data>
+            <data key="confidenceRatio">0.0347044</data>
+            <data key="log_confidence">3.7138</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.460489339205036</data>
+            <data key="name">MYC (-) ACTB</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2602" target="2718">
+            <data key="SUID">3452</data>
+            <data key="shared name">MYC (-) C10orf54</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">C10orf54--&gt;MYC</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.534</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.36179</data>
+            <data key="confidenceRatio">0.00188182</data>
+            <data key="log_confidence">6.335</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.563671670840713</data>
+            <data key="name">MYC (-) C10orf54</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2602" target="3378">
+            <data key="SUID">3443</data>
+            <data key="shared name">MYC (-) PIM2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PIM2--&gt;MYC</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.037292</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.49457</data>
+            <data key="confidenceRatio">5.24055E-4</data>
+            <data key="log_confidence">7.59323</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.54176596387133</data>
+            <data key="name">MYC (-) PIM2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3110" target="2977">
+            <data key="SUID">3435</data>
+            <data key="shared name">RPS4X (-) RPS3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPS3--&gt;RPS4X</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.39352</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">49.7942</data>
+            <data key="confidenceRatio">2.37117E-4</data>
+            <data key="log_confidence">8.4838</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.693211950198554</data>
+            <data key="name">RPS4X (-) RPS3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2596" target="3014">
+            <data key="SUID">3456</data>
+            <data key="shared name">MGEA5 (-) TAX1BP1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">TAX1BP1--&gt;MGEA5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.267164</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.49182</data>
+            <data key="confidenceRatio">0.00366483</data>
+            <data key="log_confidence">5.66791</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.466894005835215</data>
+            <data key="name">MGEA5 (-) TAX1BP1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2596" target="3067">
+            <data key="SUID">3451</data>
+            <data key="shared name">MGEA5 (-) ZEB1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ZEB1--&gt;MGEA5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.582116</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.98233</data>
+            <data key="confidenceRatio">0.00164384</data>
+            <data key="log_confidence">6.45529</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.38673003154921</data>
+            <data key="name">MGEA5 (-) ZEB1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2596" target="2835">
+            <data key="SUID">3449</data>
+            <data key="shared name">MGEA5 (-) ITGB2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">ITGB2--|MGEA5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.635984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.25704</data>
+            <data key="confidenceRatio">0.0014096</data>
+            <data key="log_confidence">6.58996</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.584195838326391</data>
+            <data key="name">MGEA5 (-) ITGB2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3107" target="3151">
+            <data key="SUID">3425</data>
+            <data key="shared name">OAS1 (-) SAMD9</data>
+            <data key="shared interaction">-</data>
+            <data key="label">SAMD9---OAS1</data>
+            <data key="edgeType">1</data>
+            <data key="weight">4.995212</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.16567</data>
+            <data key="confidenceRatio">3.92007E-6</data>
+            <data key="log_confidence">12.48803</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.857344185644307</data>
+            <data key="name">OAS1 (-) SAMD9</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3107" target="3138">
+            <data key="SUID">3417</data>
+            <data key="shared name">OAS1 (-) RSAD2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RSAD2--&gt;OAS1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">6.191468</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.21533</data>
+            <data key="confidenceRatio">1.95835E-7</data>
+            <data key="log_confidence">15.47867</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.928331458931094</data>
+            <data key="name">OAS1 (-) RSAD2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2977" target="3104">
+            <data key="SUID">3415</data>
+            <data key="shared name">RPS3 (-) RPL4</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPL4--&gt;RPS3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">6.72036</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">49.9832</data>
+            <data key="confidenceRatio">8.09177E-8</data>
+            <data key="log_confidence">16.8009</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.886194625952453</data>
+            <data key="name">RPS3 (-) RPL4</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2977" target="3284">
+            <data key="SUID">3414</data>
+            <data key="shared name">RPS3 (-) GNB2L1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">GNB2L1--&gt;RPS3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">6.85812</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">59.1903</data>
+            <data key="confidenceRatio">5.86216E-8</data>
+            <data key="log_confidence">17.1453</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.83099270478701</data>
+            <data key="name">RPS3 (-) GNB2L1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3232" target="3041">
+            <data key="SUID">3516</data>
+            <data key="shared name">YPEL5 (-) TRAF3IP3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">TRAF3IP3--|YPEL5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.3634</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.71205</data>
+            <data key="confidenceRatio">0.0357144</data>
+            <data key="log_confidence">3.4085</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.481718656834341</data>
+            <data key="name">YPEL5 (-) TRAF3IP3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3104" target="2596">
+            <data key="SUID">3496</data>
+            <data key="shared name">RPL4 (-) MGEA5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">MGEA5--&gt;RPL4</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.51852</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">12.837</data>
+            <data key="confidenceRatio">0.0231734</data>
+            <data key="log_confidence">3.7963</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.531110086373814</data>
+            <data key="name">RPL4 (-) MGEA5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3104" target="3119">
+            <data key="SUID">3447</data>
+            <data key="shared name">RPL4 (-) EIF3L</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">EIF3L--&gt;RPL4</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.7918</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">24.2081</data>
+            <data key="confidenceRatio">9.41199E-4</data>
+            <data key="log_confidence">6.9795</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.589161532907279</data>
+            <data key="name">RPL4 (-) EIF3L</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3104" target="3378">
+            <data key="SUID">3427</data>
+            <data key="shared name">RPL4 (-) PIM2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">PIM2--|RPL4</data>
+            <data key="edgeType">2</data>
+            <data key="weight">4.6024</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">16.9597</data>
+            <data key="confidenceRatio">1.01425E-5</data>
+            <data key="log_confidence">11.506</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.804647124930568</data>
+            <data key="name">RPL4 (-) PIM2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3104" target="2975">
+            <data key="SUID">3408</data>
+            <data key="shared name">RPL4 (-) RPL3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPL3--&gt;RPL4</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">62.5136</data>
+            <data key="confidenceRatio">1.58127E-9</data>
+            <data key="log_confidence">23.7187</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.920588372723303</data>
+            <data key="name">RPL4 (-) RPL3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2975" target="2974">
+            <data key="SUID">3419</data>
+            <data key="shared name">RPL3 (-) RPL10</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">RPL10--&gt;RPL3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">5.71888</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">78.1037</data>
+            <data key="confidenceRatio">4.22838E-5</data>
+            <data key="log_confidence">14.2972</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.643228312904145</data>
+            <data key="name">RPL3 (-) RPL10</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2975" target="2777">
+            <data key="SUID">3411</data>
+            <data key="shared name">RPL3 (-) EEF1G</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">EEF1G--&gt;RPL3</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">84.2261</data>
+            <data key="confidenceRatio">1.82025E-6</data>
+            <data key="log_confidence">22.1919</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.959282293840513</data>
+            <data key="name">RPL3 (-) EEF1G</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3230" target="3162">
+            <data key="SUID">3517</data>
+            <data key="shared name">ARL4C (-) SP110</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SP110--&gt;ARL4C</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.345456</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.45113</data>
+            <data key="confidenceRatio">0.037318</data>
+            <data key="log_confidence">3.36364</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.459576304670977</data>
+            <data key="name">ARL4C (-) SP110</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2974" target="3126">
+            <data key="SUID">3463</data>
+            <data key="shared name">RPL10 (-) SP100</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">SP100--|RPL10</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.9902</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">18.7375</data>
+            <data key="confidenceRatio">0.00707072</data>
+            <data key="log_confidence">4.9755</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.59708943211046</data>
+            <data key="name">RPL10 (-) SP100</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2718" target="2562">
+            <data key="SUID">3448</data>
+            <data key="shared name">C10orf54 (-) FKBP5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">FKBP5--&gt;C10orf54</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.743012</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.35056</data>
+            <data key="confidenceRatio">0.00112054</data>
+            <data key="log_confidence">6.85753</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.594357526717057</data>
+            <data key="name">C10orf54 (-) FKBP5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3356" target="3282">
+            <data key="SUID">3464</data>
+            <data key="shared name">SH3KBP1 (-) RPL6</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">RPL6--|SH3KBP1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.956724</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.77574</data>
+            <data key="confidenceRatio">0.00782589</data>
+            <data key="log_confidence">4.89181</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.537889018302549</data>
+            <data key="name">SH3KBP1 (-) RPL6</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3356" target="3394">
+            <data key="SUID">3440</data>
+            <data key="shared name">SH3KBP1 (-) SIRPG</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">SIRPG--&gt;SH3KBP1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.107012</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.6081</data>
+            <data key="confidenceRatio">4.44043E-4</data>
+            <data key="log_confidence">7.76753</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.560422461392484</data>
+            <data key="name">SH3KBP1 (-) SIRPG</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2842" target="3405">
+            <data key="SUID">3527</data>
+            <data key="shared name">KLF6 (-) CD96</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">CD96--|KLF6</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.279984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.58719</data>
+            <data key="confidenceRatio">0.0427458</data>
+            <data key="log_confidence">3.19996</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.435194139889245</data>
+            <data key="name">KLF6 (-) CD96</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2842" target="2718">
+            <data key="SUID">3469</data>
+            <data key="shared name">KLF6 (-) C10orf54</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">C10orf54--&gt;KLF6</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.866068</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.39469</data>
+            <data key="confidenceRatio">0.0102411</data>
+            <data key="log_confidence">4.66517</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.466252404120157</data>
+            <data key="name">KLF6 (-) C10orf54</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2584" target="2596">
+            <data key="SUID">3489</data>
+            <data key="shared name">KCNQ1OT1 (-) MGEA5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">MGEA5--&gt;KCNQ1OT1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.628832</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">7.09122</data>
+            <data key="confidenceRatio">0.0176333</data>
+            <data key="log_confidence">4.07208</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.587925775993911</data>
+            <data key="name">KCNQ1OT1 (-) MGEA5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2835" target="2784">
+            <data key="SUID">3492</data>
+            <data key="shared name">ITGB2 (-) ERGIC3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">ERGIC3--|ITGB2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.597352</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.45628</data>
+            <data key="confidenceRatio">0.0192995</data>
+            <data key="log_confidence">3.99338</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.48378724331682</data>
+            <data key="name">ITGB2 (-) ERGIC3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2835" target="2689">
+            <data key="SUID">3465</data>
+            <data key="shared name">ITGB2 (-) ACTB</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ACTB--&gt;ITGB2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.93644</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">26.9512</data>
+            <data key="confidenceRatio">0.00854693</data>
+            <data key="log_confidence">4.8411</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.75093656064085</data>
+            <data key="name">ITGB2 (-) ACTB</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2835" target="2904">
+            <data key="SUID">3453</data>
+            <data key="shared name">ITGB2 (-) NOSIP</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">NOSIP--&gt;ITGB2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.503076</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.52211</data>
+            <data key="confidenceRatio">0.00195059</data>
+            <data key="log_confidence">6.25769</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.570613579691347</data>
+            <data key="name">ITGB2 (-) NOSIP</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3346" target="3232">
+            <data key="SUID">3504</data>
+            <data key="shared name">G3BP2 (-) YPEL5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">YPEL5--&gt;G3BP2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.479132</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.22413</data>
+            <data key="confidenceRatio">0.0252701</data>
+            <data key="log_confidence">3.69783</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.714142842854285</data>
+            <data key="name">G3BP2 (-) YPEL5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3082" target="3282">
+            <data key="SUID">3493</data>
+            <data key="shared name">IFI16 (-) RPL6</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">RPL6--|IFI16</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.558428</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.71929</data>
+            <data key="confidenceRatio">0.0216552</data>
+            <data key="log_confidence">3.89607</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.476351092756992</data>
+            <data key="name">IFI16 (-) RPL6</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3082" target="3134">
+            <data key="SUID">3410</data>
+            <data key="shared name">IFI16 (-) OAS2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">OAS2--&gt;IFI16</data>
+            <data key="edgeType">2</data>
+            <data key="weight">8.0</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.65465</data>
+            <data key="confidenceRatio">5.52948E-11</data>
+            <data key="log_confidence">23.64375</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.941783691586943</data>
+            <data key="name">IFI16 (-) OAS2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2949" target="2842">
+            <data key="SUID">3454</data>
+            <data key="shared name">PTMA (-) KLF6</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">KLF6--&gt;PTMA</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.415096</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">5.62076</data>
+            <data key="confidenceRatio">0.00243983</data>
+            <data key="log_confidence">6.03774</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.589796734098522</data>
+            <data key="name">PTMA (-) KLF6</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2562" target="2835">
+            <data key="SUID">3488</data>
+            <data key="shared name">FKBP5 (-) ITGB2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">ITGB2--&gt;FKBP5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.673452</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">2.54067</data>
+            <data key="confidenceRatio">0.0155185</data>
+            <data key="log_confidence">4.18363</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.429330248626494</data>
+            <data key="name">FKBP5 (-) ITGB2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2562" target="2584">
+            <data key="SUID">3445</data>
+            <data key="shared name">FKBP5 (-) KCNQ1OT1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">KCNQ1OT1--|FKBP5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.887644</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">4.30559</data>
+            <data key="confidenceRatio">7.99082E-4</data>
+            <data key="log_confidence">7.21911</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.560802192958495</data>
+            <data key="name">FKBP5 (-) KCNQ1OT1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2562" target="2977">
+            <data key="SUID">3444</data>
+            <data key="shared name">FKBP5 (-) RPS3</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">RPS3--|FKBP5</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.99308</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">12.0941</data>
+            <data key="confidenceRatio">5.8824E-4</data>
+            <data key="log_confidence">7.4827</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.39603875603785</data>
+            <data key="name">FKBP5 (-) RPS3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2689" target="2949">
+            <data key="SUID">3455</data>
+            <data key="shared name">ACTB (-) PTMA</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PTMA--&gt;ACTB</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.38736</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">49.9527</data>
+            <data key="confidenceRatio">0.00921296</data>
+            <data key="log_confidence">5.9684</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.707477356842227</data>
+            <data key="name">ACTB (-) PTMA</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2689" target="2842">
+            <data key="SUID">3441</data>
+            <data key="shared name">ACTB (-) KLF6</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">KLF6--&gt;ACTB</data>
+            <data key="edgeType">2</data>
+            <data key="weight">3.09396</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">17.7959</data>
+            <data key="confidenceRatio">6.62516E-4</data>
+            <data key="log_confidence">7.7349</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.59543551640688</data>
+            <data key="name">ACTB (-) KLF6</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2689" target="2808">
+            <data key="SUID">3434</data>
+            <data key="shared name">ACTB (-) FTL</data>
+            <data key="shared interaction">-</data>
+            <data key="label">FTL---ACTB</data>
+            <data key="edgeType">1</data>
+            <data key="weight">3.52316</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">54.9647</data>
+            <data key="confidenceRatio">6.45822E-4</data>
+            <data key="log_confidence">8.8079</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.545198506373099</data>
+            <data key="name">ACTB (-) FTL</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3198" target="3232">
+            <data key="SUID">3502</data>
+            <data key="shared name">C20orf111 (-) YPEL5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">YPEL5--&gt;C20orf111</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.479132</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.22413</data>
+            <data key="confidenceRatio">0.0271612</data>
+            <data key="log_confidence">3.69783</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.714142842854285</data>
+            <data key="name">C20orf111 (-) YPEL5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3198" target="3346">
+            <data key="SUID">3486</data>
+            <data key="shared name">C20orf111 (-) G3BP2</data>
+            <data key="shared interaction">-</data>
+            <data key="label">G3BP2---C20orf111</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0144365</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">C20orf111 (-) G3BP2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3198" target="3257">
+            <data key="SUID">3484</data>
+            <data key="shared name">C20orf111 (-) STAT3</data>
+            <data key="shared interaction">-</data>
+            <data key="label">STAT3---C20orf111</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.6951984</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">0.683964</data>
+            <data key="confidenceRatio">0.0145802</data>
+            <data key="log_confidence">4.237996</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">1.0</data>
+            <data key="name">C20orf111 (-) STAT3</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3067" target="3232">
+            <data key="SUID">3446</data>
+            <data key="shared name">ZEB1 (-) YPEL5</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">YPEL5--&gt;ZEB1</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.807996</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.41763</data>
+            <data key="confidenceRatio">9.80317E-4</data>
+            <data key="log_confidence">7.01999</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.999799979995999</data>
+            <data key="name">ZEB1 (-) YPEL5</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3062" target="3295">
+            <data key="SUID">3467</data>
+            <data key="shared name">XRCC6 (-) FAM101B</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">FAM101B--|XRCC6</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.904964</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.76567</data>
+            <data key="confidenceRatio">0.00863056</data>
+            <data key="log_confidence">4.76241</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.589015089373952</data>
+            <data key="name">XRCC6 (-) FAM101B</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="3062" target="3166">
+            <data key="SUID">3466</data>
+            <data key="shared name">XRCC6 (-) WDR1</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">T</data>
+            <data key="label">WDR1--|XRCC6</data>
+            <data key="edgeType">2</data>
+            <data key="weight">1.904964</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.76567</data>
+            <data key="confidenceRatio">0.00871786</data>
+            <data key="log_confidence">4.76241</data>
+            <data key="sign">-</data>
+            <data key="partialCorrelation">-0.589015089373952</data>
+            <data key="name">XRCC6 (-) WDR1</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2674" target="2801">
+            <data key="SUID">3510</data>
+            <data key="shared name">WASF2 (-) FKBP1A</data>
+            <data key="shared interaction">-</data>
+            <data key="label">FKBP1A---WASF2</data>
+            <data key="edgeType">1</data>
+            <data key="weight">1.413784</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">1.08407</data>
+            <data key="confidenceRatio">0.0291744</data>
+            <data key="log_confidence">3.53446</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.553283335172488</data>
+            <data key="name">WASF2 (-) FKBP1A</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+        <edge source="2674" target="3378">
+            <data key="SUID">3459</data>
+            <data key="shared name">WASF2 (-) PIM2</data>
+            <data key="shared interaction">-</data>
+            <data key="sourceArrowShape">none</data>
+            <data key="targetArrowShape">arrow</data>
+            <data key="label">PIM2--&gt;WASF2</data>
+            <data key="edgeType">2</data>
+            <data key="weight">2.15182</data>
+            <data key="upstream">NA</data>
+            <data key="complexity">3.15581</data>
+            <data key="confidenceRatio">0.00489632</data>
+            <data key="log_confidence">5.37955</data>
+            <data key="sign">+</data>
+            <data key="partialCorrelation">0.385077023107703</data>
+            <data key="name">WASF2 (-) PIM2</data>
+            <data key="selected">false</data>
+            <data key="interaction">-</data>
+        </edge>
+    </graph>
+</graphml>
