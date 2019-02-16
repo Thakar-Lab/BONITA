@@ -47,7 +47,7 @@ if __name__ == '__main__':
 	graph = nx.read_gpickle(graphName)
 	
 	# read in C function to run simulations
-	updateBooler=cdll.LoadLibrary('./simulation.so')
+	updateBooler=cdll.LoadLibrary('./simulator.so')
 	boolC=updateBooler.syncBool 
 
 	# load data
