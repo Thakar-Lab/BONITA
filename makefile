@@ -1,2 +1,2 @@
-testRun.so: simulator.c
+simulation.so: simulator.c
 	gcc -o $@ -fPIC -O3 -shared $^
