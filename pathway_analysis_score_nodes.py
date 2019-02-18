@@ -3,7 +3,7 @@ import argparse as argparse
 import operator
 import networkx as nx
 import pickle
-from ctypes import *
+import ctypes
 
 from simulation import paramClass, modelClass, NPsync
 from utils import genInitValueList, setupEmptyKOKI, writeModel
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 	graph = nx.read_gpickle(graphName)
 	
 	# read in C function to run simulations
-	updateBooler=cdll.LoadLibrary('./testRun.so')
+	updateBooler=cdll.LoadLibrary('./simulator.so')
 	boolC=updateBooler.syncBool 
 
 	# load data
