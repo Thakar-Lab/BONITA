@@ -36,7 +36,7 @@ def find_overlaps(filename,geneDict):
 	return overlapsets
 
 # download and prepare graph for finding the rules
-def retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict):
+def retrieveGraph(name,aliasDict,dict1,dict2, geneDict):
 	print(name)
 	# use KEGG API to figure out what the pathway code is
 	namelist=name.split('_')
@@ -59,7 +59,7 @@ def retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict):
 		# check to see if there is a connected component, simplify graph and print if so
 		if len(list(nx.connected_component_subgraphs(graph.to_undirected() )))>0:
 			nx.write_graphml(graph,coder+'_before.graphml')
-			graph=simplifyNetworkpathwayAnalysis(graph, cvDict)
+			graph=simplifyNetworkpathwayAnalysis(graph, geneDict)
 			nx.write_graphml(graph,coder+'.graphml')
 			if len(genes.intersection(graph.nodes()))>1:
 				nx.write_gpickle(graph,coder+'.gpickle')
@@ -76,15 +76,15 @@ def retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict):
 		print(lines)
 
 # identify pathways and complete setup for simulation
-def findPathways(cvDict,gmtName, geneDict):
+def findPathways(gmtName, geneDict):
 	aliasDict, dict1, dict2={}, {}, {} # set up dicts for reading KEGG files
 	# read in kegg gene symbol dictionaries
 	nc.parseKEGGdicthsa('inputData/hsa00001.keg',aliasDict,dict1)
 	nc.parseKEGGdict('inputData/ko00001.keg',aliasDict,dict2)
-	namelist=find_overlaps(gmtName,cvDict) # find list of pathways with overlaps with the genes from omics data
+	namelist=find_overlaps(gmtName,geneDict) # find list of pathways with overlaps with the genes from omics data
 	print('num of overlap nodes: ' + str(len(namelist)))
 	for name in namelist:
-		retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict) # find and store gpickles for graphs found
+		retrieveGraph(name,aliasDict,dict1,dict2, geneDict) # find and store gpickles for graphs found
 
 # collapse unnecessary nodes for easier rule determination
 def simplifyNetworkpathwayAnalysis(graph, ss):
