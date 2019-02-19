@@ -3,7 +3,7 @@ import numpy as numpy
 from random import random
 import csv as csv
 import networkx as nx
-from scipy.stats import variation
+#from scipy.stats import variation
 
 # read rpm or fpkm data into format necessary for BONITA simulations and pathway analysis
 def readFpkmData(dataName, delmited):
@@ -14,7 +14,7 @@ def readFpkmData(dataName, delmited):
 			data.append(row)
 	sampleList=[]
 	geneDict={}
-	cvDict={}
+	#cvDict={}
 	for j in range(1,len(data[1])):
 		sampleList.append({})
 	for i in range(1,len(data)):
@@ -22,13 +22,13 @@ def readFpkmData(dataName, delmited):
 		for j in range(1,len(data[i])):
 			tempDatalist.append(float(data[i][j]))
 		maxdata=numpy.max(tempDatalist)
-		cvDict[data[i][0]]=variation(tempDatalist)
+		#cvDict[data[i][0]]=variation(tempDatalist)
 		if maxdata==0:
 			maxdata=1.
 		geneDict[data[i][0]]=tempDatalist/maxdata
 		for j in range(0,len(data[i])-1):
 			sampleList[j][str.upper(data[i][0])]=float(data[i][j+1])/maxdata
-	return sampleList, geneDict, cvDict
+	return sampleList, geneDict#, cvDict
 
 # writes rules as a network
 def Get_expanded_network(rules,equal_sign='*='):
