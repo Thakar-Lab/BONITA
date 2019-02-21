@@ -6,7 +6,7 @@ BONITA- Boolean Omics Network Invariant-Time Analysis is a package for the infer
 **Maintainer**: Please contact Rohith Palli at rohith_palli@urmc.rochester.edu
 
 # Installation
-BONITA is designed for use with distributed computing systems. A desktop version installation and use guide are provided in the wiki (see bar across top of github page). Necessary SLURM commands are included. If users are having trouble translating to PBS or other queueing standards for their computing environment, please contact maintainer Rohith Palli at rohith_palli@urmc.rochester.edu. 
+BONITA is designed for use with distributed computing systems. A desktop version installation and use guide are provided in the wiki (https://github.com/Thakar-Lab/BONITA/wiki). Necessary SLURM commands are included. If users are having trouble translating to PBS or other queueing standards for their computing environment, please contact maintainer Rohith Palli at rohith_palli@urmc.rochester.edu. 
 
 ## Install Python
 Please create a virtual environment with the latest version of Intel Python 2 and install the following packages (all accessible by pip):
