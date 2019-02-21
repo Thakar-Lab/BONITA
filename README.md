@@ -40,7 +40,7 @@ You will need the following files to run BONITA:
 
 There are three main steps in BONITA: prepare pathways for rule inference, rule inference, and pathway analysis. All necessary files for an example run are provided in the pathway_analysis folder within experiments folder. The preparation step requires internet access to access the KEGG API. 
 
-**Step 1: Pathway prepearation**
+**Step 1: Pathway preparation**
 
 **This step requires internet access.** BONITA needs omics data, gmt file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
 comma separated: `python pathway_analysis_setup.py Your_omics_data Your_gmt_file -sep ,`
