@@ -366,7 +366,7 @@ def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 	knockins=np.zeros(len(model.nodeList),dtype=np.intc, order='C')
 	knockouts=np.zeros(len(model.nodeList),dtype=np.intc, order='C')
 	for knocker in KOs:
-		knockouts[knocker]=0
+		knockouts[knocker]=1
 	for knocker in KIs:
 		knockins[knocker]=1
 
