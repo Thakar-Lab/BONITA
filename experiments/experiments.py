@@ -79,7 +79,7 @@ def runExperiment(graph, name, samples, noise, edgeNoise, params):
 
 	# load in C function
 	#updateBooler=ctypes.cdll.LoadLibrary('./testRun.so')
-	updateBooler=cdll.LoadLibrary('./testRun.so')
+	updateBooler=cdll.LoadLibrary('./simulator.so')
 	boolC=updateBooler.syncBool 
 	params.sample=samples
 
@@ -176,8 +176,7 @@ def transformTest(graph,name,fileName):
 		return
 	
 	# load in C function
-	#updateBooler=ctypes.cdll.LoadLibrary('./testRun.so')
-	updateBooler=cdll.LoadLibrary('./testRun.so')
+	updateBooler=cdll.LoadLibrary('./simulator.so')
 	boolC=updateBooler.syncBool 
 
 	# load data, params, make empty knockout and knockin lists (no KO or KI in transform tests)

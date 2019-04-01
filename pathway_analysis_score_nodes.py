@@ -3,8 +3,7 @@ import argparse as argparse
 import operator
 import networkx as nx
 import pickle
-import ctypes
-
+from ctypes import *
 from simulation import paramClass, modelClass, NPsync
 from utils import genInitValueList, setupEmptyKOKI, writeModel
 from GA import GAsearchModel, localSearch

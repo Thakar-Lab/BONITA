@@ -184,7 +184,7 @@ class paramClass:
 		self.mutModel=.25
 		self.cells=1000
 		self.samples=5
-		self.generations=120 # generations to run
+		self.generations= 120  #generations to run
 		self.popSize=24 #size of population
 		self.mu= 24 #individuals selected
 		self.lambd= 24 #children produced
@@ -369,7 +369,6 @@ def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 		knockouts[knocker]=1
 	for knocker in KIs:
 		knockins[knocker]=1
-
 	# put objects in correct format for passing to C
 	nodeIndividual=np.array(individual, dtype=np.intc, order='C')
 	indLen=len(nodeIndividual)
@@ -389,7 +388,6 @@ def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 	simSteps1=ctypes.c_void_p(simSteps)
 	knockouts1=ctypes.c_void_p(knockouts.ctypes.data)
 	knockins1=ctypes.c_void_p(knockins.ctypes.data)
-	
 	for j in range(0,cells):
 		# run simulation across cells
 		initValues=genEBNInitValues(individual, model,sampleProbs) # get initial values for all nodes
@@ -399,8 +397,8 @@ def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 		valsubmit=ctypes.c_void_p(vals.ctypes.data) # put output array into C pointer
 		# run simulation and average over last ten steps
 		syncBoolC(valsubmit,nodeIndividual1, indLen1, nodeNum1, andLenList1, individualParse1, andNodes1, andNodeInvertList1, simSteps1, initValues1, knockouts1, knockins1)
-		cellArray.append(.1*vals)
-	return [(1.*np.sum(col)) / cells for col in zip(*cellArray)]
+		cellArray.append(.1*np.copy(vals))
+	return [( (1.*np.sum(col))/cells) for col in zip(*cellArray)]
 
 # NP simulation code for asynchronous simulation... slow because no C code yet
 def NPasync(individual, model, cells, sampleProbs, params, KOs, KIs):

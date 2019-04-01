@@ -68,8 +68,8 @@ void syncBool(int *avg,int *individual,int indLen, int nodeNum, int *andLenList,
 			//find start and finish for each node to update from the individualParse list
 			if(knockouts[i]){temp=0;}
 			else if(knockins[i]){temp=1;}
-			else if (andLenList[i]==1){temp= (oldValue[i]!=andNodeInvertList[i][0][0]);}
-			else if (andLenList[i]==0){temp=oldValue[i];}
+			else if (andLenList[i]==1){temp= (oldValue[andNodes[i][0][0]]!=andNodeInvertList[i][0][0]);}
+			else if (andLenList[i]==0){temp= oldValue[i];}
 			else{
 				if (i==(nodeNum-1)){nodeEnd= indLen;}
 				else{nodeEnd=individualParse[i+1];}
