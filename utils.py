@@ -4,6 +4,9 @@ from random import random
 import csv as csv
 import networkx as nx
 from scipy.stats import variation
+import simulation as sim
+from ctypes import *
+
 
 # read rpm or fpkm data into format necessary for BONITA simulations and pathway analysis
 def readFpkmData(dataName, delmited):
@@ -25,7 +28,7 @@ def readFpkmData(dataName, delmited):
 		cvDict[data[i][0]]=variation(tempDatalist)
 		if maxdata==0:
 			maxdata=1.
-		geneDict[data[i][0]]=tempDatalist/maxdata
+		geneDict[data[i][0]]=[temperDataPoint/maxdata for temperDataPoint in tempDatalist]
 		for j in range(0,len(data[i])-1):
 			sampleList[j][str.upper(data[i][0])]=float(data[i][j+1])/maxdata
 	return sampleList, geneDict, cvDict
@@ -190,7 +193,6 @@ def writeNode(currentNode,nodeIndividual, model):
 	andNodeInvertList=model.andNodeInvertList[currentNode] #find list of lists of whether input nodes need to be inverted (corresponds to inputOrder)
 	writenode=''+model.nodeList[currentNode]+'*=' # set up the initial string to use to write node
 
-
 	if model.andLenList[currentNode]==0 or sum(nodeIndividual)==0:
 		return writenode + ' ' + model.nodeList[currentNode] #if no inputs, maintain value
 	elif len(andNodes)==1: 
@@ -198,9 +200,9 @@ def writeNode(currentNode,nodeIndividual, model):
 		value=''	
 		#if only one input, then set to that number
 		if andNodeInvertList[0][0]==0:
-			value= value+ 'not ' + model.nodeList[andNodes[0][0]]
-		else:
 			value= value + model.nodeList[andNodes[0][0]]
+		else:
+			value= value+ 'not ' + model.nodeList[andNodes[0][0]]
 		return writenode + value 
 	else:
 		#update nodes with more than one input
@@ -240,3 +242,70 @@ def LiuNetwork1Builder():
 	graph.add_edge('d','f', signal='a')	
 	graph.add_edge('d','g', signal='a')
 	return graph
+
+# write model from rule set
+def makeModelRules(rules,sss,equal_sign='*='):
+	graph=nx.DiGraph()
+	andNodeList=[]
+	nodeListTemp=[]
+	for rule in rules:
+		andNodeTemp=[]
+		ruler=rule.strip('( )\t\n')
+		startNode=ruler.split(equal_sign)[0].strip('( )\t')
+		nodeListTemp.append(startNode)
+		ruler=ruler.split(equal_sign)[1]
+		if 'or' in ruler:
+			rulers=ruler.split('or')
+		else:
+			rulers=[ruler]
+		for ruler in rulers:
+			andNode=[]
+			if 'and' in ruler:
+				andRules=ruler.split('and')
+			else:
+				andRules=[ruler]
+			for andRule in andRules:
+				temprule=andRule.strip('( )\t')
+				if 'not' in andRule:
+					graph.add_edge(temprule[3:].strip('( )\t'),startNode,attr_dict={'signal':'i'})
+					andNode.append(temprule[3:].strip('( )\t'))
+				else:
+					andNode.append(temprule)
+					graph.add_edge(temprule,startNode,attr_dict={'signal':'a'})
+			andNode.sort()
+			andNodeTemp.append(andNode)
+		andNodeList.append(andNodeTemp)
+	model=sim.modelClass(graph, sss, True)
+	individual=[]
+	for i in range(len(model.nodeList)):
+		nodeTemp=nodeListTemp.index(model.nodeList[i])
+		for j in range(0,model.individualParse[i+1]-model.individualParse[i]):
+			tempAndNode=[model.nodeList[node] for node in model.andNodeList[i][j]]
+			tempAndNode.sort()
+			if  tempAndNode in andNodeList[nodeTemp]:
+				individual.append(1)
+			else:
+				individual.append(0)
+	return model, individual, graph
+
+
+# if __name__ == '__main__':
+# 	##make factor-level plots for each way of parsing the data
+# 	sampleList, geneDict, cvDict=readFpkmData('testInput.txt', '\t')
+# 	with open('testRules.txt') as csvfile:
+# 		model, individual, graph= makeModelRules(csvfile.readlines(),sss=sampleList,equal_sign='=')
+# 	boolValues1=genInitValueList(sampleList,model)
+# 	boolValues2=[]
+# 	updateBooler=cdll.LoadLibrary('./simulator.so')
+# 	boolC=updateBooler.syncBool 
+# 	params=sim.paramClass()
+# 	model.initValueList=boolValues1
+# 	model.updateCpointers()
+# 	KOs,KIs=setupEmptyKOKI(len(sampleList))
+# 	for j in range(len(boolValues1)):
+# 		boolValues2.append(sim.NPsync(individual, model, params.cells, boolValues1[j], params, KOs[j], KIs[j], boolC, True))
+# 	print(boolValues2)
+# 	sampleList3, geneDict3, cvDict3=readFpkmData('testOutput.txt', '\t')
+# 	boolValues3=genInitValueList(sampleList3,model)
+# 	print(boolValues3)
+# 	print(boolValues3==boolValues2)

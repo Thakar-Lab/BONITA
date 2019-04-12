@@ -327,7 +327,7 @@ def ifngStimTestSetup():
 	dict2={}
 	parseKEGGdict('inputData/ko00001.keg',aliasDict,dict2)
 	# read in list of codes then load them into network
-	inputfile = open('inputData/ID_filtered_IFNGpathways2.txt', 'r')
+	inputfile = open('inputData/ID_filtered_IFNGpathways.txt', 'r')
 	lines = inputfile.readlines()
 
 	# iterate through and create gpickle of graph for all IFNG networks
@@ -347,3 +347,5 @@ def ifngStimTestSetup():
 			nx.write_graphml(graph,coder+'.graphml')
 			nx.write_gpickle(graph,coder+'.gpickle')
 			print(coder)
+# if __name__ == '__main__':
+# 	ifngStimTestSetup()
