@@ -107,11 +107,13 @@ def findPathwayList():
 			model=modelHolder(storeModel3)
 			pathVals.append(pickle.Unpickler(open( 'pickles/'+code+'_'+str(i)+'_scores1.pickle', "rb" )).load())
 			rules.append(writeModel(bruteOut1, model))
+		print(pathVals)
 		graph = nx.read_gpickle("gpickles/"+code+".gpickle")
 		ImportanceVals={} # average importance vals over trials
 		for node in range(len(storeModel[1])): 
 			ImportanceVals[storeModel[1][node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
 		# add nodes removed during network simplification back in
+		print(ImportanceVals)
 		pathways.append([code,ImportanceVals, rules, graph])
 	return pathways
 

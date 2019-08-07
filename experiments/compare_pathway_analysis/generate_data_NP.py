@@ -81,15 +81,14 @@ def PAtester(graph, name):
 	true=10
 	false=true
 	params=sim.paramClass()
-	sampleLists,geneDicts,cvDicts= [],[],[]
+	sampleLists,geneDicts= [],[]
 	# import starting points
 	for i in range(1,11):
-		sampleList, geneDict, cvDict=readFpkmData('neg_binom_gen_'+str(i)+'.csv', ',') # read in data
+		sampleList, geneDict=readFpkmData2('neg_binom_gen_'+str(i)+'.csv', ',') # read in data
 		sampleLists.append(sampleList)
 		geneDicts.append(geneDict)
-		cvDicts.append(cvDict)
 	knockoutLists, knockinLists= setupEmptyKOKI(len(sampleList))
-	updateBooler=cdll.LoadLibrary('./testRun.so')
+	updateBooler=cdll.LoadLibrary('./simulator.so')
 	boolC=updateBooler.syncBool 
 
 	for j in range(10): # iterate over imported starting points

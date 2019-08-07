@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --partition=preempt
+#SBATCH --partition=standard
 #SBATCH -a 1-25
 #SBATCH -J GArun
 #SBATCH -o GA_out_%A_%a.txt

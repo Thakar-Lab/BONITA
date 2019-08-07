@@ -397,8 +397,11 @@ def eaMuPlusLambdaAdaptive( toolbox, model, mu, lambda_, cxpb, mutpb, ngen, name
 	logbook.record(gen=0, nevals=len(invalid_ind), **record)
 	if verbose:
 		print(logbook.stream)
-
-	breaker=False
+	
+	breaker=True
+	for j in range(len(model.andLenList)):
+		if model.andLenList[j]>1:
+			breaker=False
 	for ind in population:
 		if numpy.sum(ind.fitness.values)< .01*len(ind.fitness.values):
 			breaker=True

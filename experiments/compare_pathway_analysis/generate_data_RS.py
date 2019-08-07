@@ -82,28 +82,49 @@ def PAtester(graph, name):
 	true=10
 	false=true
 	params=sim.paramClass()
-	sampleLists,geneDicts,cvDicts= [],[],[]
+	sampleLists,geneDicts= [],[]
 	# import starting points
 	for i in range(1,11):
-		sampleList, geneDict, cvDict=readFpkmData('neg_binom_gen_'+str(i)+'.csv', ',') # read in data
+		sampleList, geneDict=readFpkmData2('neg_binom_gen_'+str(i)+'.csv', ',') # read in data
 		sampleLists.append(sampleList)
 		geneDicts.append(geneDict)
-		cvDicts.append(cvDict)
-	
+	knockoutLists, knockinLists= setupEmptyKOKI(len(sampleList))
+	updateBooler=cdll.LoadLibrary('./simulator.so')
+	boolC=updateBooler.syncBool 
+	geneNames=geneDicts[0].keys()
+	for node in graph.nodes():
+		if node in geneNames:
+			print(node)
+		else:
+			print(node)
+			for k in range(10):
+				q=randint(0,len(geneNames)-1)
+				geneDicts[k][str.upper(node)]=geneDicts[k][geneNames[q]]
+				for j in range(10):
+					sampleLists[k][j][str.upper(node)]=sampleLists[k][j][str.upper(geneNames[q])]
+				print([sampleLists[k][j][str.upper(node)] for j in range(10)])
 	for j in range(10): # iterate over imported starting points
+		model= sim.modelClass(graph,sampleLists[j], True)
+		rule=ga.genBits(model)
+		newInitValueList=genInitValueList(sampleLists[j],model)
+		model.initValueList=newInitValueList
+		# print(newInitValueList)
+		model.updateCpointers() 
+		output=[sim.NPsync(rule[1], model, params.cells, newInitValueList[k], params, knockinLists[k], knockoutLists[k], boolC) for k in range(5)]
+		controlSampleList=compileOuts(output,sampleLists[j], controls, model)
+
 		# generate model
 		# loop over number of times we want to generate fake data and perform sequence of events
 		# generate Boolean model for this trial
-		controlSampleList=sampleLists[j][0:5]
 		genelist=geneDicts[j].keys()
 		for perturbation in [0,5,10,15,20]: 
-			tSampleList=list(sampleLists[j][5:10])
+			tSampleList=list(sampleLists[j][5:10])			
 			perturbationSize=2.**(-.1*perturbation)
 			for i in range(5):
 				# generate values across samples
 				for node in graph.nodes():
 					if len(graph.predecessors(node))==0:
-						tSampleList[i][node]=min(max(0,sampleLists[j][i+5][node]*(perturbationSize)),1)
+						tSampleList[i][str.upper(node)]=min(max(0,sampleLists[j][i+5][str.upper(node)]*(perturbationSize)),1)
 			outputData(controlSampleList, tSampleList, genelist,name+str(perturbation)+'_true_'+str(j)+'.csv', geneDicts[j])
 
 if __name__ == '__main__':	
