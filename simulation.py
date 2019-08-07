@@ -184,7 +184,7 @@ class paramClass:
 		self.mutModel=.25
 		self.cells=1000
 		self.samples=5
-		self.generations= 120  #generations to run
+		self.generations=120 # generations to run
 		self.popSize=24 #size of population
 		self.mu= 24 #individuals selected
 		self.lambd= 24 #children produced
