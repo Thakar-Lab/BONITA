@@ -5,6 +5,11 @@ BONITA- Boolean Omics Network Invariant-Time Analysis is a package for the infer
 **Authors**: _Rohith Palli, Mukta G. Palshikar, and Juilee Thakar_\
 **Maintainer**: Please contact Rohith Palli at rohith_palli@urmc.rochester.edu
 
+# Citation
+We would appreciate the citation of our manuscript describing BONITA, below, for any use of our code. 
+
+Palli, R., Palshikar, M. G., & Thakar, J. (2019). Executable pathway analysis using ensemble discrete-state modeling for large-scale data. PLoS Computational Biology.
+
 # Installation
 BONITA is designed for use with distributed computing systems. A desktop version installation and use guide are provided in the wiki (see bar across top of github page). Necessary SLURM commands are included. If users are having trouble translating to PBS or other queueing standards for their computing environment, please contact maintainer Rohith Palli at rohith_palli@urmc.rochester.edu. 
 
