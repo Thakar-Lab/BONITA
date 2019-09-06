@@ -516,7 +516,7 @@ def makeHist(resFile):
     plt.rc('legend', fontsize=8)  # legend fontsize
     plt.rc('figure', titlesize=8) # fontsize of the figure title
     ax=ax.get_figure()
-    finishPlot("Length of shortest longest path", "Frequency", "keggCycles.png") #finishPlot(xlabeler, ylabeler, plotname)
+    finishPlot("Length of longest shortest path", "Frequency", "keggCycles.png") #finishPlot(xlabeler, ylabeler, plotname)
     plt.close()
 
 def printStats(resFile):
