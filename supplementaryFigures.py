@@ -516,7 +516,7 @@ def makeHist(resFile):
     plt.rc('legend', fontsize=8)  # legend fontsize
     plt.rc('figure', titlesize=8) # fontsize of the figure title
     ax=ax.get_figure()
-    finishPlot("Length of shortest longest path", "Frequency", "keggCycles.png") #finishPlot(xlabeler, ylabeler, plotname)
+    finishPlot("Length of longest shortest path", "Frequency", "keggCycles.png") #finishPlot(xlabeler, ylabeler, plotname)
     plt.close()
 
 def printStats(resFile):
@@ -546,17 +546,17 @@ def makeRNplots(codes, iterations=25):
 
     #wrapper to generate S1, S3, S4
 
-    allRes=scoreERS(codes, iterations)
-    allRes_df=makeRNdataframe(allRes, ifPrint=True)
-    supplementary1(allRes_df) #make supplementary figure 1
-    allRes_df=allRes_df["ruleLengths", "ImportanceVals", "scoreFunction6"].agg(np.mean)
-    Fig2PanelD(allRes_df) # Make plot corresponding to Fig2 Panel D of main text - The log average total size of ERS for each node are plotted against the log total ancestor overlap which is the sum of the pairwise shared ancestor number between any two upstream nodes
+    #allRes=scoreERS(codes, iterations)
+    #allRes_df=makeRNdataframe(allRes, ifPrint=True)
+    #supplementary1(allRes_df) #make supplementary figure 1
+    #allRes_df=allRes_df["ruleLengths", "ImportanceVals", "scoreFunction6"].agg(np.mean)
+    #Fig2PanelD(allRes_df) # Make plot corresponding to Fig2 Panel D of main text - The log average total size of ERS for each node are plotted against the log total ancestor overlap which is the sum of the pairwise shared ancestor number between any two upstream nodes
     supplementaryFigure3()
-    supplementary4() #RSV experiments, importance scores not calculated for generic4
-
+    #supplementary4() #RSV experiments, importance scores not calculated for generic4
+    #codes=getCodes()
+    #maxReps=25 #maximum number of iterations run, usually 5. 25 iterations were run for experiments on simulated networks.
+    #makeRNplots(codes, iterations=maxReps)
 #################
 
 if __name__== "__main__":
-    codes=getCodes()
-    maxReps=25 #maximum number of iterations run, usually 5. 25 iterations were run for experiments on simulated networks.
-    makeRNplots(codes, iterations=maxReps)
+    supplementaryFigure3()
