@@ -11,7 +11,7 @@ We would appreciate the citation of our manuscript describing BONITA, below, for
 Palli, R., Palshikar, M. G., & Thakar, J. (2019). Executable pathway analysis using ensemble discrete-state modeling for large-scale data. PLoS Computational Biology.
 
 # Installation
-BONITA is designed for use with distributed computing systems. A desktop version installation and use guide are provided in the wiki (see bar across top of github page). Necessary SLURM commands are included. If users are having trouble translating to PBS or other queueing standards for their computing environment, please contact maintainer Rohith Palli at rohith_palli@urmc.rochester.edu. 
+BONITA is designed for use with distributed computing systems. A desktop version installation and use guide are provided in the wiki (https://github.com/Thakar-Lab/BONITA/wiki). Necessary SLURM commands are included. If users are having trouble translating to PBS or other queueing standards for their computing environment, please contact maintainer Rohith Palli at rohith_palli@urmc.rochester.edu. 
 
 ## Install Python
 Please create a virtual environment with the latest version of Intel Python 2 and install the following packages (all accessible by pip):
@@ -45,7 +45,7 @@ You will need the following files to run BONITA:
 
 There are three main steps in BONITA: prepare pathways for rule inference, rule inference, and pathway analysis. All necessary files for an example run are provided in the pathway_analysis folder within experiments folder. The preparation step requires internet access to access the KEGG API. 
 
-**Step 1: Pathway prepearation**
+**Step 1: Pathway preparation**
 
 **This step requires internet access.** BONITA needs omics data, gmt file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
 comma separated: `python pathway_analysis_setup.py Your_omics_data Your_gmt_file -sep ,`
@@ -53,10 +53,10 @@ tab separated: `python pathway_analysis_setup.py -t Your_omics_data Your_gmt_fil
 
 **Step 2: Rule inference**
 
-Simply run the script find_rules_pathway_analysis.sh which will automatically submit appropriate jobs to SLURM queue.
+Simply run the script find_rules_pathway_analysis.sh which will automatically submit appropriate jobs to SLURM queue 
 
 **Step 3: Pathway Analysis**
 To accomplish this, the proper inputs must be provided to pathway_analysis_score_pathways.py
 
 `python pathway_analysis_score_pathways.py Your_omics_data Your_condition_matrix Your_desired_contrasts -sep Separator_used_in_gmt_and_omics_data`\
-If your files are tab separated, then the following command can be used: `python pathway_analysis_score_pathways.py -t Your_omics_data Your_condition_matrix Your_desired_contrasts`
+If your files are tab separated, then the following command can be used: `python pathway_analysis.py -t Your_omics_data Your_condition_matrix Your_desired_contrasts`
