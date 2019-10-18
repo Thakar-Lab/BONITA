@@ -299,7 +299,7 @@ def readKEGG(lines, graph, KEGGdict):
 def uploadKEGGfiles(filelist, graph, foldername, KEGGdict):
 	#upload KEGG files from a particular folder.
 	#just provide the folder, file names as a list, and the graph you want to put things in.
-	#iteratively calls teh readKEGG method
+	#iteratively calls the readKEGG method
 	for file in filelist:
 		inputfile = open(foldername+'/'+file, 'r')
 		lines = inputfile.readlines()
