@@ -55,21 +55,29 @@ There are three main steps in BONITA: prepare pathways for rule inference, rule 
 
 **Option 1: On a gmt of human pathways** 
 BONITA needs omics data, gmt file, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. The commands are below:
+
 comma separated: `python pathway_analysis_setup.py -gmt Your_gmt_file -sep , Your_omics_data `
+
 tab separated: `python pathway_analysis_setup.py -t  -gmt Your_gmt_file Your_omics_data`
 
 **Option 2: On all KEGG pathways for any organism** 
 BONITA needs omics data, organism code, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. A three letter organism code from KEGG must be provided (lower case). Example codes include mmu for mouse and hsa for human. The commands are below:
 comma separated: `python pathway_analysis_setup.py -org Your_org_code -sep , Your_omics_data `
+
 comma separated, human: `python pathway_analysis_setup.py -org hsa -sep , Your_omics_data `
+
 comma separated, mouse: `python pathway_analysis_setup.py -org mmu -sep , Your_omics_data `
+
 tab separated: `python pathway_analysis_setup.py -t  -gmt Your_org_code Your_omics_data`
 
 **Option 3: On a list of KEGG pathways for any organism** 
 BONITA needs omics data, organism code, the list of pathways, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. A three letter organism code from KEGG must be provided (lower case). Example codes include mmu for mouse and hsa for human. The list of pathways must include the 5 digit pathway identifier, must be seperated by commas, and must not include any other numbers. An example paths.txt is included in the inputData folder. The commands are below:
 comma separated: `python pathway_analysis_setup.py -org Your_org_code -sep , -paths Your_pathway_list Your_omics_data `
+
 comma separated, human: `python pathway_analysis_setup.py -org hsa -sep , -paths Your_pathway_list Your_omics_data `
+
 comma separated, mouse: `python pathway_analysis_setup.py -org mmu -sep , -paths Your_pathway_list Your_omics_data `
+
 tab separated: `python pathway_analysis_setup.py -t  -gmt Your_org_code -paths Your_pathway_list Your_omics_data`
 
 **Step 2: Rule inference**
