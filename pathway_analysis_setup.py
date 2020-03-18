@@ -52,7 +52,7 @@ def retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict):
 		code=lines.split('\n')[0].split(':')[1][3:8] # KEGG number of overlapped pathway
 		graph=nx.DiGraph()
 		# download and integrate human and generic versions of pathway
-		coder=str('ko'+code) 
+		coder=str('ko'+code)
 		nc.uploadKEGGcodes([coder], graph, dict2)
 		coder=str('hsa'+code)
 		nc.uploadKEGGcodes_hsa([coder], graph,dict1, dict2)
@@ -88,12 +88,12 @@ def findPathways(cvDict,gmtName, geneDict):
 
 # collapse unnecessary nodes for easier rule determination
 def simplifyNetworkpathwayAnalysis(graph, ss):
-	#network simplification algorithm. 
+	#network simplification algorithm.
 	# # 1. remove self edges
 	# # 2. remove complexes and rewire components
 	# # 3. remove nodes with no input data
 	# # 4. remove dependence of nodes on complexes that include that node
-	
+
 	# 1. remove self edges
 	for edge in graph.edges():
 		if edge[0]==edge[1]:
@@ -111,7 +111,7 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 				for element in rm.split('-'):
 					graph.add_edge(start,element,signal='a')
 		for finish in graph.successors(rm):
-			edge2=graph.get_edge_data(rm,finish)['signal']		
+			edge2=graph.get_edge_data(rm,finish)['signal']
 			if edge2=='i':
 				for element in rm.split('-'):
 					graph.add_edge(element,finish,signal='i')
@@ -150,7 +150,6 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 						flag=False
 				if flag:
 					graph.remove_edge(pred,node)
-		
 
 	for edge in graph.edges():
 		if edge[0]==edge[1]:
@@ -159,12 +158,12 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 
 if __name__ == '__main__':
 	# read in options
-	parser = argparse.ArgumentParser(prog='BONITA') 
+	parser = argparse.ArgumentParser(prog='BONITA')
 	parser.set_defaults(verbose=False, mode='PA',sep=',')
 	parser.add_argument("-v", action="store_true", dest="verbose",  help="output ongoing iterations to screen [default off]")
-	parser.add_argument("-m", "--mode", metavar="mode", help="What BONITA functions should be run?")	
-	parser.add_argument("-sep", "--sep", metavar="seperator", help="How are columns in datafile specified")	
-	parser.add_argument("-t", action='store_const',const='\t', dest="sep",help="Tab delimited?")	
+	parser.add_argument("-m", "--mode", metavar="mode", help="What BONITA functions should be run?")
+	parser.add_argument("-sep", "--sep", metavar="seperator", help="How are columns in datafile specified")
+	parser.add_argument("-t", action='store_const',const='\t', dest="sep",help="Tab delimited?")
 	parser.add_argument("data")
 	parser.add_argument("pathways") # 'filtered.c2.cp.kegg.v3.0.symbols.gmt'
 	results = parser.parse_args()
