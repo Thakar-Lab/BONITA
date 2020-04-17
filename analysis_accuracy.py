@@ -43,7 +43,7 @@ def ruleScore(graph):
 	return(scoreFunction)# find the end of a node in the bistring
 def findEnds(model, node, indiv):
 	if node==len(model.nodeList)-1:
-		end1=len(indiv) 
+		end1=len(indiv)
 	else:
 		end1=model.individualParse[node+1]
 	start1=model.individualParse[node]
@@ -73,7 +73,7 @@ def finishPlot(xlabeler, ylabeler, plotname):
 	plt.xlabel(xlabeler, labelpad=.5)
 	sns.despine()
 	sns.set_style("ticks")
-	sns.set(font_scale=1) 
+	sns.set(font_scale=1)
 	plt.rc('font', size=8)          # controls default text sizes
 	plt.rc('axes', titlesize=8)     # fontsize of the axes title
 	plt.rc('axes', labelsize=8)    # fontsize of the x and y labels
@@ -89,7 +89,7 @@ def finishPlot(xlabeler, ylabeler, plotname):
 def setupPlot(dictlist):
 	sns.set_style("ticks")
 	# sns.set_context("paper")
-	sns.set_palette(sns.color_palette("Greys_r", 6))	
+	sns.set_palette(sns.color_palette("Greys_r", 6))
 	return pd.DataFrame(dictlist)
 # make a swarm plot
 def plotSwarm(dictlist, xval, yval, title, xlabeler, ylabeler, plotname):
@@ -141,7 +141,7 @@ def plotBar(dictlist, xval, yval, title, xlabeler, ylabeler, plotname, hueBool, 
 		fig, ax = plt.subplots(figsize=[2.6,2])
 		ax=sns.barplot(data=df,ax=ax, x=xval, y=yval, palette=sns.color_palette("Greys_r", 6), hue=huer, ci='sd', capsize=.05)
 		sns.set_style("ticks")
-		sns.set(font_scale=1) 
+		sns.set(font_scale=1)
 		plt.rc('font', size=8)          # controls default text sizes
 		plt.rc('axes', titlesize=8)     # fontsize of the axes title
 		plt.rc('axes', labelsize=8)    # fontsize of the x and y labels
@@ -158,7 +158,7 @@ def plotBar(dictlist, xval, yval, title, xlabeler, ylabeler, plotname, hueBool, 
 
 # make a scatterplot with regression line
 def plotScatterReg(dictlist, xval, yval, title, xlabeler, ylabeler, plotname, hueBool, huer):
-	
+
 	df= setupPlot(dictlist)
 	if not hueBool:
 		ax=sns.regplot(data=df,x=xval, y=yval, color='black', fit_reg=True, ci=None)
@@ -215,8 +215,8 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 			inCovtemp=[]
 			# find start and end of this node in each model
 			start1,end1 = findEnds(model1s[k], node, truthList[k])
-			start2,end2 = findEnds(model2s[k], node, testList[k])			
-			
+			start2,end2 = findEnds(model2s[k], node, testList[k])
+
 			# find the shadow and nodes for each model
 			truthInEdges=findInEdges(model1s[k],node)
 			testInEdges=findInEdges(model2s[k],node)
@@ -224,20 +224,20 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 			# find the bitstring for just this node
 			truth= truthList[k][start1:end1]
 			test= testList[k][start2:end2]
-			
+
 			# simplify ground truth and recovered rules
 			truth= simplifyRule(truth, truthInEdges)
 			test= simplifyRule(test, testInEdges)
-			
+
 			# edit overall rule list with simplified rules
 			testList[k][start2:end2] = test
 			truthList[k][start1:end1] = truth
-		
+
 			# find SD, PPV, etc....
 			truthSet=Set([]) # edges in correct rule
 			testSet=Set([]) # edges in rule found
 			baseSet=Set([]) # edges possible across all rules
-			
+
 			# find edges in true rule (and edges possible), average incoming coefficient of variation
 			for i in range(0,len(truth)):
 				if truth[i]==1:
@@ -251,7 +251,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 				if test[i]==1:
 					for nodeToAdd in model2s[k].andNodeList[node][i]:
 						testSet.add(nodeToAdd)
-			# find structural distance at this node. 
+			# find structural distance at this node.
 			SDs[k]=SDs[k]+len(truthSet.difference(testSet))+len(testSet.difference(truthSet))
 			tempSD=tempSD+len(truthSet.difference(testSet))+len(testSet.difference(truthSet))
 			# save edge-wise statistics for this node
@@ -287,7 +287,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 
 
 	nodeSens=[] # sensitivity by node
-	nodePPV=[] # PPV by node 
+	nodePPV=[] # PPV by node
 	nodeRTs=[] # rules true by node
 	nodePsens=[]
 	nodepPPV=[]
@@ -305,21 +305,21 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 		rtTemp=[] # stores rules true for this node across all networks
 		ones=[] # stores the number of false negative and rules
 		zeros=[] # stores the number of  correct and rules
-		negones=[] # stores the number of false positive and rules 
-		equivOnes=[] # stores the min number of false negatives across equivs 
+		negones=[] # stores the number of false positive and rules
+		equivOnes=[] # stores the min number of false negatives across equivs
 		equivZeros=[] # stores the max correct across equivs
 		equivNegOnes=[] # stores the min false positives across equivs
 		sumindividual=[] # total number true positive and rules
 		equivRTsensNode=[]
 		equivSensNode=[]
-		
+
 		#loop over individuals provided and calculate sens, PPV, rules true
 		for i in range(len(truthList)):
-			
+
 			# find start and end of this node in each model
 			start1,end1 = findEnds(model1s[i], node, truthList[i])
-			start2,end2 = findEnds(model2s[i], node, testList[i])			
-			
+			start2,end2 = findEnds(model2s[i], node, testList[i])
+
 			# find the values for just this node
 			truth= truthList[i][start1:end1]
 			test= testList[i][start2:end2]
@@ -327,7 +327,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 			# set up empty lists for ands, edges, and the shadow and nodes associated with this node in each model
 			truthAnds=[]
 			testAnds=[]
-			
+
 			# get the set of all shadow and nodes that are actually used in each rule
 			for j in range(len(model1s[i].andNodeList[node])):
 				if truth[j]>0:
@@ -353,7 +353,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 				possibilityOnes=[]
 				possibilityZeros=[]
 				possibilityZNetones=[]
-				for testAnder1 in equivAnds:	
+				for testAnder1 in equivAnds:
 					if (truthAnd==testAnder1):
 						RTequiv=1.
 					possibilityOnes.append(len(truthAnd.difference(testAnd)))
@@ -376,7 +376,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 			ones.append(onetemp)
 			zeros.append(zerotemp)
 			negones.append(negonetemp)
-			sumindividual.append(sumindtemp)			
+			sumindividual.append(sumindtemp)
 			# add Rules true first sample-wise then node-wise
 			if len(model1s[i].andNodeList[node])>1:
 				if (truthAnd==testAnd):
@@ -414,7 +414,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 			PPV=100
 		else:
 			PPV=(1.*numpy.sum(temp)/len(temp))
-		
+
 		if len(equivs)>0:
 			equivNodeRTsens.append(numpy.mean(equivRTsensNode))
 			# calculate max sensitivity for the node
@@ -434,7 +434,7 @@ def compareIndividualsNodeWise(truthList, testList, model1s, model2s,covs, equiv
 				pPPV=(1.*numpy.sum(temp)/len(temp))
 			nodepPPV.append(pPPV)
 
-		# add to list of sensitivity and PPV by 
+		# add to list of sensitivity and PPV by
 		nodeSens.append(sensitivity)
 		nodePPV.append(PPV)
 	sampleEquivRT=[1.*numpy.mean(filter(lambda a: a != 100, sampler)) for sampler in equivRTsens] # Rules True for each trial
@@ -455,6 +455,24 @@ class modelHolder:
 		self.nodeList=nodeList
 		self.nodeDict=nodeDict
 		self.initValueList=initValueList
+
+	# setup C pointers with correct lengths to pass to simulation software in C
+	def modelHolder_updateCpointers(self):
+		tempandnoder=[]
+		tempandinverter=[]
+		for currentNode in range(500):
+			tempAndNodes=[]
+			tempandNodeInvertList=[]
+			if currentNode<len(self.nodeList):
+				tempAndNodes=[xi+[-1]*(3-len(xi)) for xi in self.andNodeList[currentNode]]
+				tempandNodeInvertList=[xi+[-1]*(3-len(xi)) for xi in self.andNodeInvertList[currentNode]]
+			while(len(tempAndNodes)<7):
+				tempAndNodes.append([0,0,0])
+				tempandNodeInvertList.append([0,0,0])
+			tempandnoder.append(tempAndNodes)
+			tempandinverter.append(tempandNodeInvertList)
+		self.andNodeInvert=np.array(tempandinverter, dtype=np.intc, order='C')
+		self.andNodes=np.array(tempandnoder, dtype=np.intc, order='C')
 
 # perform analysis for a particular graph and trial: uploads data, funs comparisons, and returns
 def analyzeGraph(stem, replicates):
@@ -484,20 +502,20 @@ def analyzeGraph(stem, replicates):
 
 # analyze omics noise experiment
 def analyzeOmicsNoiseExperiment(codes, end):
-	noiseLabels=[1,2,3,4,5,6,7,8]		
+	noiseLabels=[1,2,3,4,5,6,7,8]
 	noiseVals=[1,2,3,4,5,6,7,8]
 	analyzeNoiseExperiment(codes, end, noiseLabels, noiseVals)
 
 # analyze sample number variation experiment
 def analyzeSamplesExperiment(codes, end):
-	noiseLabels=[1,2,3,4,5,6]		
+	noiseLabels=[1,2,3,4,5,6]
 	noiseVals=[2,3,4,5,10,15]
 	analyzeNoiseExperiment(codes, end, noiseLabels, noiseVals)
-# analyze experiment varying noise- in RPKN, omics levels etc. 
+# analyze experiment varying noise- in RPKN, omics levels etc.
 def analyzeNoiseExperiment(codes, end, noiseLabels, noiseVals):
 	sensspeclist=[]
 	for code in codes:
-		print(code)		
+		print(code)
 		#FOR EACH RUN WITH THAT GPICKLE
 		for noiseLabel, noiseVal in zip(noiseLabels,noiseVals):
 			truthmodel,result, varList=analyzeGraph('pickles/'+code+str(noiseLabel)+'_',10) # analyze accuracies for this network and noise level
@@ -511,14 +529,14 @@ def analyzeNoiseExperiment(codes, end, noiseLabels, noiseVals):
 	plotBar(sensspeclist,'Noise', 'Equiv RT Sens','Rules True by Sample Number', 'Sample Number', 'Maximum Proportion Rules True','Noise_GA_Equiv_RT_sens'+end+'.png', False, 'Noise')
 	plotBar(sensspeclist,'Noise', 'Proportion Rules True','Rules True by Sample Number', 'Sample Number', 'Proportion Rules True','Noise_GA_Rules_True'+end+'.png', False, 'Noise')
 
-# analyze accuracy at a granular level when no noise is being used 
+# analyze accuracy at a granular level when no noise is being used
 def analyzeAccuracy(codes, end):
 	degree2dictlist, degree3dictlist, SDs, nodeSDS, nodeNumbers,nodeNumlistcut, nodeNumlistuncut, dfdictlist, sensspeclist=[], [], [], [],[],[],[], [], []
 	nodewiseList, nodewiseList2, nodewiseList3=[],[],[] # set up dictionaries for all nodes, in-degree 2 nodes, and in-degree 3 nodes
 	sensspeclist=[] # set up dictionaries for networks as a whole
 	# for each gpickle
 	for code in codes:
-		print(code)		
+		print(code)
 		ruleTruthtots=[]
 		#FOR EACH RUN WITH THAT GPICKLE
 		truthmodel,result, varList, equivLengths, ancestorScores =analyzeGraph('pickles/'+code+'_',25)
@@ -543,7 +561,7 @@ def analyzeAccuracy(codes, end):
 		# assign what the var of interest is
 		for i in range(len(tempSens)):
 			sensspeclist.append({'Percent Rules True':100.*sampleEquivRT[i],'Node_Num':nodeNum,'Sensitivity':tempSens[i],'Equiv RT Sens':sampleEquivRT[i],'PPV':tempPPV[i], 'Proportion Rules True': ruleTruth[i],'GA': 'no Adapt'})
-		print(nodeNumbers[-1])	
+		print(nodeNumbers[-1])
 	sns.set(rc={'axes.facecolor':'white', 'figure.facecolor':'white'})
 	# plotBar(sensspeclist,'Node_Num', 'Equiv RT Sens','Rules True by Node Number', 'Node Number', 'Proportion Rules True','Adapt_GA_Equiv_RT_sens'+end+'.png', False, 'Noise')
 	# plotBar(sensspeclist,'Node_Num', 'Proportion Rules True','Rules True by Node Number', 'Node Number', 'Proportion Rules True','Adapt_GA_Rules_True'+end+'.png', False, 'Noise')
@@ -563,7 +581,7 @@ def analyzeAccuracy(codes, end):
 	df=pd.DataFrame(nodewiseList)
 	sns.set_style("ticks")
 
-	sns.set(font_scale=1) 
+	sns.set(font_scale=1)
 	plt.rc('font', size=8)          # controls default text sizes
 	plt.rc('axes', titlesize=8)     # fontsize of the axes title
 	plt.rc('axes', labelsize=8)    # fontsize of the x and y labels
@@ -586,7 +604,7 @@ def analyzeAccuracy(codes, end):
 	sns.set_style("ticks")
 	fig, ax = plt.subplots(figsize=[2.6,2])
 	sns.set_style("ticks")
-	sns.set(font_scale=1) 
+	sns.set(font_scale=1)
 	plt.rc('font', size=8)          # controls default text sizes
 	plt.rc('axes', titlesize=8)     # fontsize of the axes title
 	plt.rc('axes', labelsize=8)    # fontsize of the x and y labels
@@ -628,7 +646,7 @@ def analyzeGens(dataminer, code, popCode):
 		testList.append(test)
 		inputList=pickle.Unpickler(open( 'pickles/'+code+'_'+str(i)+'_input.pickle', "rb" )).load() # load in generated data
 		varLists.append([numpy.std([inputList[k][j] for k in range(len(inputList))]) for j in range(len(inputList[0])) ]) # put variances in correct order
-	
+
 		# load in generations
 		outputList=pickle.Unpickler(open( 'pickles/'+code+'_'+str(i)+popCode+'.pickle', "rb" )).load()
 		[fitnesslist, popList, modellist]=outputList
@@ -670,7 +688,7 @@ def analyzeGens(dataminer, code, popCode):
 		nodeNumbers.append(nodeNum)
 		if len(ruleTruth)>0:
 			ruleTruthtots.append(numpy.mean(ruleTruth))
-		dataminer.append({'Node_Num':nodeNum,'Sensitivity':numpy.mean(tempSens),'PPV':numpy.mean(tempPPV), 'Proportion Rules True': numpy.mean(ruleTruth),'gen':gen, 'error':numpy.mean(minvalues)})				
+		dataminer.append({'Node_Num':nodeNum,'Sensitivity':numpy.mean(tempSens),'PPV':numpy.mean(tempPPV), 'Proportion Rules True': numpy.mean(ruleTruth),'gen':gen, 'error':numpy.mean(minvalues)})
 	print(popCode)
 	print(dataminer[len(dataminer)-1])
 
@@ -679,7 +697,7 @@ def analyzeEdgeNoiseExperiment(codes, end):
 	nodeNumbers, sensspeclist= [], []
 	# for each gpickle
 	for code in codes:
-		print(code)		
+		print(code)
 		#FOR EACH RUN WITH THAT GPICKLE
 		for noiseNum in range(1,8):
 			noiser=findRPKNnoise(noiseNum)
@@ -689,7 +707,7 @@ def analyzeEdgeNoiseExperiment(codes, end):
 			# assign what the var of interest is
 			for i in range(len(tempSens)):
 				sensspeclist.append({'Gen 2':noiser/10.,'Node_Num':nodeNum,'Sensitivity':tempSens[i],'PPV':tempPPV[i], 'Proportion Rules True': ruleTruth[i], 'SD': SD[i], 'Equivalent SD': equivSDs[i]})
-	
+
 	df=pd.DataFrame(sensspeclist)
 
 	print(df)

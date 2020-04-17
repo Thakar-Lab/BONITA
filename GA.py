@@ -15,6 +15,7 @@ from operator import attrgetter, itemgetter
 # import other pieces of our software
 from simulation import paramClass, NP
 from utils import findEnd, genRandBits, bitList, genInitValueList
+
 # generates random bitstring with at least one value for each node
 def genBits(model):
 	# generate random bitlist
@@ -22,7 +23,7 @@ def genBits(model):
 	counter=0
 	# make sure bitlist isn't zero
 	while numpy.sum(startInd)==0 and counter < 10000:
-		startInd=list(genRandBits(model.size)) 
+		startInd=list(genRandBits(model.size))
 		counter+=1
 	# go through nodes and make sure that there are 1-5 ones in the random list
 	for node in range(0,len(model.nodeList)):
@@ -59,9 +60,9 @@ def cxTwoPointNode(ind1, ind2):
 	# needed to account for bistring only being one of two components of individual
 	"""Executes a two-point crossover on the input :term:`sequence`
     individuals. The two individuals are modified in place and both keep
-    their original length. 
+    their original length.
     :returns: A tuple of two individuals.
-    This function uses the :func:`~random.randint` function from the Python 
+    This function uses the :func:`~random.randint` function from the Python
     base :mod:`random` module.
 
     Modified to cross over between rules
@@ -87,7 +88,7 @@ def cxTwoPointNode(ind1, ind2):
 
 # sets up GA toolbox from deap
 def buildToolbox( individualLength, bitFlipProb, model, params):
-	
+
 	toolbox = base.Toolbox() # build baseline toolbox
 	weightTup=(-1.0,) # specify weights of the errors
 	for i in range(len(model.nodeList)-1):
@@ -105,7 +106,7 @@ def buildToolbox( individualLength, bitFlipProb, model, params):
 	stats.register("std", numpy.std)
 	stats.register("min", numpy.min)
 	stats.register("max", numpy.max)
-	
+
 	# finish registering the toolbox functions
 	toolbox.register("mate", tools.cxTwoPoint)
 	toolbox.register("mutate", tools.mutFlipBit, indpb=bitFlipProb)
@@ -119,7 +120,7 @@ def evaluateByNode(individual, cells, model,  sss, params, KOlist, KIlist, boolC
 	return tuple([numpy.sum([(boolValues[j][i]-sss[j][model.nodeList[i]])**2 for j in range(0,len(sss))]) for i in range(0, len(model.nodeList))])
 
 # generates a random set of samples made up of cells by using parameteris from probInit seq
-# to set up then iterating using strict Boolean modeling. 
+# to set up then iterating using strict Boolean modeling.
 def runProbabilityBooleanSims(individual, model, sampleNum, cells, params, KOlist, KIlist, boolC):
 	seeds=[]
 	for i in range(0,sampleNum):
@@ -177,7 +178,7 @@ def mutFlipBitAdapt(indyIn, genfrac, mutModel):
 		if model.andLenList[j]<2:
 			errors[j]=0
 		else:
-			errorNodes=errorNodes+1		
+			errorNodes=errorNodes+1
 
 	if numpy.sum(errors)<.05*errorNodes or errorNodes==0:
 		# condition selection on number of incoming edges + downstream edges
@@ -187,7 +188,7 @@ def mutFlipBitAdapt(indyIn, genfrac, mutModel):
 			if model.andLenList[j]<2:
 				pseudoerrors[j]=0
 		focusNode=selectMutNode(pseudoerrors)
-	else: 
+	else:
 		# if errors are relatively high, focus on nodes that fit the worst and have highest in-degree
 		# calculate probabilities for mutating each node
 		for i in range(len(errors)):
@@ -241,11 +242,11 @@ def selNSGA2(individuals, k):
 	than sorting the population according to their front rank. The
 	list returned contains references to the input *individuals*. For more
 	details on the NSGA-II operator see [Deb2002]_.
-	
+
 	:param individuals: A list of individuals to select from.
 	:param k: The number of individuals to select.
 	:returns: A list of selected individuals.
-	
+
 	.. [Deb2002] Deb, Pratab, Agarwal, and Meyarivan, "A fast elitist
 	   non-dominated sorting genetic algorithm for multi-objective
 	   optimization: NSGA-II", 2002.
@@ -253,28 +254,28 @@ def selNSGA2(individuals, k):
 	pareto_fronts = sortNondominatedAdapt(individuals, k)
 	for front in pareto_fronts:
 		assignCrowdingDist(front)
-	
+
 	chosen = list(chain(*pareto_fronts[:-1]))
 	k = k - len(chosen)
 	if k > 0:
 		sorted_front = sorted(pareto_fronts[-1], key=attrgetter("fitness.crowding_dist"), reverse=True)
 		chosen.extend(sorted_front[:k])
-		
+
 	return chosen
 
 # taken from deap and modified slightly to make pareto sorting less strict
 def sortNondominatedAdapt(individuals, k, first_front_only=False):
-	"""Sort the first *k* *individuals* into different nondomination levels 
+	"""Sort the first *k* *individuals* into different nondomination levels
 	using the "Fast Nondominated Sorting Approach" proposed by Deb et al.,
-	see [Deb2002]_. This algorithm has a time complexity of :math:`O(MN^2)`, 
-	where :math:`M` is the number of objectives and :math:`N` the number of 
+	see [Deb2002]_. This algorithm has a time complexity of :math:`O(MN^2)`,
+	where :math:`M` is the number of objectives and :math:`N` the number of
 	individuals.
-	
+
 	:param individuals: A list of individuals to select from.
 	:param k: The number of individuals to select.
 	:param first_front_only: If :obj:`True` sort only the first front and
 							 exit.
-	:returns: A list of Pareto fronts (lists), the first list includes 
+	:returns: A list of Pareto fronts (lists), the first list includes
 			  nondominated individuals.
 	.. [Deb2002] Deb, Pratab, Agarwal, and Meyarivan, "A fast elitist
 	   non-dominated sorting genetic algorithm for multi-objective
@@ -287,12 +288,12 @@ def sortNondominatedAdapt(individuals, k, first_front_only=False):
 	for ind in individuals:
 		map_fit_ind[ind.fitness].append(ind)
 	fits = map_fit_ind.keys()
-	
+
 	current_front = []
 	next_front = []
 	dominating_fits = defaultdict(int)
 	dominated_fits = defaultdict(list)
-	
+
 	# Rank first Pareto front
 	for i, fit_i in enumerate(fits):
 		for fit_j in fits[i+1:]:
@@ -304,13 +305,13 @@ def sortNondominatedAdapt(individuals, k, first_front_only=False):
 				dominated_fits[fit_j].append(fit_i)
 		if dominating_fits[fit_i] == 0:
 			current_front.append(fit_i)
-	
+
 	fronts = [[]]
 	for fit in current_front:
 		fronts[-1].extend(map_fit_ind[fit])
 	pareto_sorted = len(fronts[-1])
 
-	# Rank the next front until all individuals are sorted or 
+	# Rank the next front until all individuals are sorted or
 	# the given number of individual are sorted.
 	if not first_front_only:
 		N = min(len(individuals), k)
@@ -325,14 +326,14 @@ def sortNondominatedAdapt(individuals, k, first_front_only=False):
 						fronts[-1].extend(map_fit_ind[fit_d])
 			current_front = next_front
 			next_front = []
-	
+
 	return fronts
 # taken from deap and modified slightly to make pareto sorting less strict
 def dominated(ind1, ind2):
-	"""Return true if each objective of *self* is not strictly worse than 
-		the corresponding objective of *other* and at least one objective is 
+	"""Return true if each objective of *self* is not strictly worse than
+		the corresponding objective of *other* and at least one objective is
 		strictly better.
-		:param obj: Slice indicating on which objectives the domination is 
+		:param obj: Slice indicating on which objectives the domination is
 					tested. The default value is `slice(None)`, representing
 					every objectives.
 	"""
@@ -343,22 +344,22 @@ def dominated(ind1, ind2):
 	if mean1 > mean2 :
 		not_equal = True
 	elif mean1 < mean2:
-		return False                
+		return False
 	return not_equal
 # taken from deap
 def assignCrowdingDist(individuals):
-	"""Assign a crowding distance to each individual's fitness. The 
-	crowding distance can be retrieve via the :attr:`crowding_dist` 
+	"""Assign a crowding distance to each individual's fitness. The
+	crowding distance can be retrieve via the :attr:`crowding_dist`
 	attribute of each individual's fitness.
 	"""
 	if len(individuals) == 0:
 		return
-	
+
 	distances = [0.0] * len(individuals)
 	crowd = [(ind.fitness.values, i) for i, ind in enumerate(individuals)]
-	
+
 	nobj = len(individuals[0].fitness.values)
-	
+
 	for i in xrange(nobj):
 		crowd.sort(key=lambda element: element[0][i])
 		distances[crowd[0][1]] = float("inf")
@@ -397,7 +398,7 @@ def eaMuPlusLambdaAdaptive( toolbox, model, mu, lambda_, cxpb, mutpb, ngen, name
 	logbook.record(gen=0, nevals=len(invalid_ind), **record)
 	if verbose:
 		print(logbook.stream)
-	
+
 	breaker=True
 	for j in range(len(model.andLenList)):
 		if model.andLenList[j]>1:
@@ -469,6 +470,8 @@ def localSearch(model, indy, newSSS, params, KOlist, KIlist, boolC):
 		equivs.append(output[1])
 		devs.append(output[2])
 	return individual, equivs, devs
+
+
 # local search function
 def checkNodePossibilities(node, indy, newSSS, cellNum, model,params, KOlist, KIlist, boolC ):
 	tol=.01*len(newSSS) # set tolerance for equivalence

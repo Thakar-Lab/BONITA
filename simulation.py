@@ -7,11 +7,11 @@ import networkx as nx
 import itertools as itertool
 import scipy.stats as regress
 import numpy as np
-import ctypes 
+import ctypes
 import math as math
 
 class modelClass:
-	def __init__(self,graph, sss, groundTruth): 
+	def __init__(self,graph, sss, groundTruth):
 		#remove self loops from the graph
 		for node in graph.nodes():
 			repeat=True
@@ -26,7 +26,7 @@ class modelClass:
 		andNodeList=[] #a list of the shadow nodes that represent and relations between incoming edge
 		andNodeInvertList=[] # keeps track of which incoming nodes for each node need to be inverted
 		andLenList=[] # keeps track of how many nodes are coming into each shadow AND node
-		nodeList=graph.nodes()#define the node list simply as the nodes in the graph. 
+		nodeList=graph.nodes()#define the node list simply as the nodes in the graph.
 		nodeDict={} #identifies names of nodes with their index in the node list- provide name, get index
 		possibilityLister=[]
 		possibilityInverter=[]
@@ -39,11 +39,11 @@ class modelClass:
 		initValueList=[] #starting states for nodes
 		for j in range(0,len(sss)): #construct empty lists to stick values in later for intiial value list
 			initValueList.append([])
-		
+
 		#find all possible combinations of upstream contributors for each node. These become the shadow And nodes
 		for i in range(0,len(nodeList)):
 			permtemp=[]
-			predtemp=graph.predecessors(nodeList[i]) # get predecessors of node. 
+			predtemp=graph.predecessors(nodeList[i]) # get predecessors of node.
 			succnum.append(len(graph.successors(nodeList[i])))
 			possibilitytemp=[nodeDict[predder] for predder in predtemp]
 			possibilityLister.append(list(possibilitytemp))
@@ -62,7 +62,7 @@ class modelClass:
 					preds=predtemp
 				else:
 					preds=[]
-					# select the best predecessors by linear regression		
+					# select the best predecessors by linear regression
 					slopetemp=[]
 					predCorr=[]
 					jarray=[ss[nodeList[i]] for ss in sss]
@@ -128,16 +128,16 @@ class modelClass:
 		self.andNodeList=andNodeList # shadow and node inputs
 		self.andNodeInvertList=andNodeInvertList # keeps track of which incoming nodes for each node need to be inverted
 		self.andLenList=andLenList # keeps track of length of above inputOrderList for each node
-		self.nodeList=nodeList #define the node list simply as the nodes in the graph. 
+		self.nodeList=nodeList #define the node list simply as the nodes in the graph.
 		self.nodeDict=nodeDict #identifies names of nodes with their index in the node list.. provide name, get index
-		self.initValueList=initValueList #puts an empty and correctly structured initValueList together for later population. 
+		self.initValueList=initValueList #puts an empty and correctly structured initValueList together for later population.
 		self.possibilityList=possibilityLister
 		self.possibilityInverter=possibilityInverter
 		self.permList=permList
 		self.successorNums=succnum
 		self.nodeNum=len(nodeList)
 
-		
+
 	def update_upstream(self, node, newUpstreams):
 		withNones = zip(newUpstreams, itertool.repeat('empty'))
 		possibilities=list(itertool.product(*withNones))
@@ -180,7 +180,7 @@ class modelClass:
 		self.andNodes=np.array(tempandnoder, dtype=np.intc, order='C')
 
 class paramClass:
-	def __init__(self,):    
+	def __init__(self,):
 		self.mutModel=.25
 		self.cells=1000
 		self.samples=5
@@ -200,9 +200,9 @@ class paramClass:
 		self.sigmaNetwork=0
 		self.sigmaNode=0
 		self.trials=1
-		
+
 def updateBool(currentNode,oldValue,nodeIndividual, model):
-	# we update node by updating shadow and nodes then combining them to update or nodes. 
+	# we update node by updating shadow and nodes then combining them to update or nodes.
 	andNodes=model.andNodeList[currentNode] # find the list of shadow and nodes we must compute before computing value of current nodes
 	andNodeInvertList=model.andNodeInvertList[currentNode] #find list of lists of whether input nodes need to be inverted (corresponds to inputOrder)
 	#update nodes with more than one input
@@ -225,7 +225,7 @@ def updateBool(currentNode,oldValue,nodeIndividual, model):
 	return int(newval)
 
 def updateFuzzy(currentNode,oldValue,nodeIndividual, model):
-	# we update node by updating shadow and nodes then combining them to update or nodes. 
+	# we update node by updating shadow and nodes then combining them to update or nodes.
 	andNodes=model.andNodeList[currentNode] # find the list of shadow and nodes we must compute before computing value of current nodes
 	andNodeInvertList=model.andNodeInvertList[currentNode] #find list of lists of whether input nodes need to be inverted (corresponds to inputOrder)
 	#update nodes with more than one input
@@ -262,7 +262,7 @@ def runBool(individual, model,  simSteps, initValues, params, knockouts, knockin
 
 # synchronous Boolean simulation function
 def syncBool(individual, model, simSteps, initValues, knockouts, knockins):
-	# do simulation. individual specifies the particular logic rules on the model. params is a generic holder for simulation parameters. 
+	# do simulation. individual specifies the particular logic rules on the model. params is a generic holder for simulation parameters.
 	# set up data storage for simulation, add step 0
 	newValue=list(initValues)
 	nodeNum=len(model.nodeList)
@@ -280,14 +280,14 @@ def syncBool(individual, model, simSteps, initValues, knockouts, knockins):
 				if oldValue[i]!=model.andNodeInvertList[i][0][0]:
 					temp=1
 				else:
-					temp=0   
+					temp=0
 			elif model.andLenList[i]==0:
 				temp=oldValue[i]
 			else:
 				if i==len(model.nodeList)-1:
 					end= model.size
 				else:
-					end=model.individualParse[i+1]	 
+					end=model.individualParse[i+1]
 				if sum(individual[model.individualParse[i]:end])==0:
 					temp=oldValue[i]
 				else:
@@ -303,7 +303,7 @@ def asyncBool(individual, model, simSteps, initValues, iters, knockouts, knockin
 	sum1=[0 for x in range(0,len(initValues))]
 	# run iterations with different orderings
 	for i in range(0,params.iters):
-		# do simulation. individual specifies the particular logic rules on the model. params is a generic holder for simulation parameters. 
+		# do simulation. individual specifies the particular logic rules on the model. params is a generic holder for simulation parameters.
 		# set up data storage for simulation, add step 0
 		newValue=list(initValues)
 		# totalNodes=0... turn this on for information criterion
@@ -313,7 +313,7 @@ def asyncBool(individual, model, simSteps, initValues, iters, knockouts, knockin
 		#iterate over number of steps necessary
 		for step in range(0,simSteps):
 			oldValue=list(newValue)
-			#shuffle- async 
+			#shuffle- async
 			shuffle(seq)
 			for seq[i] in range(0,len(model.nodeList)):
 				#find start and finish for each node to update from the individualParse list
@@ -332,7 +332,7 @@ def asyncBool(individual, model, simSteps, initValues, iters, knockouts, knockin
 					if seq[i]==len(model.nodeList)-1:
 						end= model.size
 					else:
-						end=model.individualParse[i+1]	 
+						end=model.individualParse[i+1]
 					temp=updateBool(seq[i],newValue,individual[model.individualParse[seq[i]]:end],  model)
 				newValue[seq[i]]=temp
 		for j in range(0,len(sum1)):
@@ -361,7 +361,7 @@ def NP(individual, model, cells, sampleProbs, params, KOs, KIs, boolC):
 def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 	cellArray=[]
 	simSteps= 100
-	
+
 	# set up knockin and knockout lists
 	knockins=np.zeros(len(model.nodeList),dtype=np.intc, order='C')
 	knockouts=np.zeros(len(model.nodeList),dtype=np.intc, order='C')
@@ -374,7 +374,7 @@ def NPsync(individual, model, cells, sampleProbs, params, KOs, KIs, syncBoolC):
 	indLen=len(nodeIndividual)
 	nodeNum=len(model.nodeList)
 	individualParse=np.array(model.individualParse, dtype=np.intc, order='C')
-	
+
 	andLenList=np.array(model.andLenList, dtype=np.intc, order='C')
 
 	# convert objects into C pointers
@@ -416,11 +416,11 @@ def NPasync(individual, model, cells, sampleProbs, params, KOs, KIs):
 def updateBool2(currentNode,oldValue,nodeIndividual,model):
 	# load in library
 	updateBooler=ctypes.cdll.LoadLibrary('./simulator.so')
-	updateBool3=updateBooler.updateBool  
+	updateBool3=updateBooler.updateBool
 	# save old value and output arrays
 	oldValue=np.array(oldValue,dtype=np.intc)
 	nodeIndividual=np.array(nodeIndividual, dtype=np.intc)
-	
+
 	# set up and node arrays, convert to C pointers....
 	# all of this is obsolete now and is in the model, but this is legacy code so left here for future reference
 	indLen=len(nodeIndividual)
@@ -428,12 +428,12 @@ def updateBool2(currentNode,oldValue,nodeIndividual,model):
 	while(len(tempAndNodes)<7):
 		tempAndNodes.append([0,0,0])
 	andNodes=np.array(tempAndNodes)
-	
+
 	tempandNodeInvertList=[xi+[-1]*(3-len(xi)) for xi in model.andNodeInvertList[currentNode]]
 	while(len(tempandNodeInvertList)<7):
 		tempandNodeInvertList.append([0,0,0])
 	andNodeInvertList=np.array(tempandNodeInvertList)
-	
+
 	andLenList=np.array([len(lister) for lister in model.andNodeList[currentNode]], dtype=np.intc)
 
 	currentNode=ctypes.c_void_p(currentNode)

@@ -98,7 +98,7 @@ def findPathwayList():
 			else:
 				print(file[:-8]+' has no output')
 	print(codes)
-	# for each of these pathways, we find the output of the rule determination and scoring procedures and put them together. 
+	# for each of these pathways, we find the output of the rule determination and scoring procedures and put them together.
 	for code in codes:
 		pathVals=[]
 		rules=[]
@@ -110,7 +110,7 @@ def findPathwayList():
 		print(pathVals)
 		graph = nx.read_gpickle("gpickles/"+code+".gpickle")
 		ImportanceVals={} # average importance vals over trials
-		for node in range(len(storeModel[1])): 
+		for node in range(len(storeModel[1])):
 			ImportanceVals[storeModel[1][node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
 		# add nodes removed during network simplification back in
 		print(ImportanceVals)
@@ -127,7 +127,7 @@ def readFpkm(dataName,delmited):
 		for row in reader:
 			data[row[0]]=[float(row[k]) for k in range(1,len(row))]
 	firstline.pop(0)
-	
+
 	# identify positions of each sample in the data
 	colNums={}
 	for item in range(len(firstline)):
@@ -224,17 +224,17 @@ def scorePathway(RAs,pathImportances, CVdict):
 if __name__ == '__main__':
 	import time
 	start_time = time.time()
-	
+
 	# load arguments from user
-	parser = argparse.ArgumentParser(prog='BONITA') 
+	parser = argparse.ArgumentParser(prog='BONITA')
 	parser.set_defaults(sep=',')
-	parser.add_argument("-sep", "--sep", metavar="seperator", help="How are columns in datafile specified")	
-	parser.add_argument("-t", action='store_const',const='\t', dest="sep",help="Tab delimited?")	
+	parser.add_argument("-sep", "--sep", metavar="seperator", help="How are columns in datafile specified")
+	parser.add_argument("-t", action='store_const',const='\t', dest="sep",help="Tab delimited?")
 	parser.add_argument("data")
 
 	parser.add_argument("matrix")
 	parser.add_argument("diffName")
-	
+
 	results = parser.parse_args()
 	matrixName= results.matrix
 	# run pathway analysis

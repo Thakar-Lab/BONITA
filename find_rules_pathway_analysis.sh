@@ -1,5 +1,15 @@
 #!/bin/bash
+#SBATCH --partition=debug
+#SBATCH -J step1_setupPA
+#SBATCH -o setupPA.log
+#SBATCH -t 1:00:00
+#SBATCH -n 1
+#SBATCH -c 1
+
+module load intelpython/2.7.12
+#python pathway_analysis_setup_net.py  -sep , "WP23_edgeList_edited.txt_net_2.rules_attractors.txt.bin" "WP23_edgeList_edited.txt_net_2.rules.graphml"
+
 for graphfilename in *.gpickle; do
 	chmod -R 755 $graphfilename;
-	sbatch calcNodeImportancesubmit.sh $graphfilename;
+	sbatch calcNodeImportancesubmit_parallel_local_search.sh $graphfilename;
 done
