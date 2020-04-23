@@ -21,7 +21,8 @@ Please create a virtual environment with the latest version of Intel Python 2 an
 * deap
 * lxml
 * bs4
-* seaborn\
+* seaborn
+* bioservices\
 The software was tested with Intel Python 2.7.12 and the following package versions: 
 networkx==1.11, pandas==0.19.0, requests==2.11.1, deap==1.0.2, 
 bs4==0.0.1, lxml==4.1.1, seaborn==0.8.1. In our experience, only the networkx version affects BONITA functionality. 
@@ -68,7 +69,7 @@ comma separated, human: `python pathway_analysis_setup.py -org hsa -sep , Your_o
 
 comma separated, mouse: `python pathway_analysis_setup.py -org mmu -sep , Your_omics_data `
 
-tab separated: `python pathway_analysis_setup.py -t  -gmt Your_org_code Your_omics_data`
+tab separated: `python pathway_analysis_setup.py -t  -org Your_org_code Your_omics_data`
 
 **Option 3: On a list of KEGG pathways for any organism** 
 BONITA needs omics data, organism code, the list of pathways, and an indication of what character is used to separate columns in the file. For example, a traditional comma separated value file (csv) would need BONITA input "-sep ,". Since tab can't be passed in as easily, a -t command will automatically flag tab as the separator. A three letter organism code from KEGG must be provided (lower case). Example codes include mmu for mouse and hsa for human. The list of pathways must include the 5 digit pathway identifier, must be seperated by commas, and must not include any other numbers. An example paths.txt is included in the inputData folder. The commands are below:
@@ -78,7 +79,7 @@ comma separated, human: `python pathway_analysis_setup.py -org hsa -sep , -paths
 
 comma separated, mouse: `python pathway_analysis_setup.py -org mmu -sep , -paths Your_pathway_list Your_omics_data `
 
-tab separated: `python pathway_analysis_setup.py -t  -gmt Your_org_code -paths Your_pathway_list Your_omics_data`
+tab separated: `python pathway_analysis_setup.py -t  -org Your_org_code -paths Your_pathway_list Your_omics_data`
 
 **Step 2: Rule inference**
 
