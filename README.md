@@ -83,7 +83,9 @@ tab separated: `python pathway_analysis_setup.py -t  -org Your_org_code -paths Y
 
 **Step 2: Rule inference**
 
-Simply run the script find_rules_pathway_analysis.sh which will automatically submit appropriate jobs to SLURM queue 
+Simply run the script find_rules_pathway_analysis.sh which will automatically submit appropriate jobs to SLURM queue:
+
+`bash find_rules_pathway_analysis.sh`
 
 **Step 3: Pathway Analysis**
 To accomplish this, the proper inputs must be provided to pathway_analysis_score_pathways.py. The cleaup.sh script will automatically put output of rule inference step into correct folders. 
