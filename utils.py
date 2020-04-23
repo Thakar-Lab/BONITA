@@ -25,10 +25,10 @@ def readFpkmData(dataName, delmited):
 		for j in range(1,len(data[i])):
 			tempDatalist.append(float(data[i][j]))
 		maxdata=numpy.max(tempDatalist)
-		cvDict[data[i][0]]=variation(tempDatalist)
+		cvDict[str.upper(data[i][0])]=variation(tempDatalist)
 		if maxdata==0:
 			maxdata=1.
-		geneDict[data[i][0]]=[temperDataPoint/maxdata for temperDataPoint in tempDatalist]
+		geneDict[str.upper(data[i][0])]=[temperDataPoint/maxdata for temperDataPoint in tempDatalist]
 		for j in range(0,len(data[i])-1):
 			sampleList[j][str.upper(data[i][0])]=float(data[i][j+1])/maxdata
 	return sampleList, geneDict, cvDict

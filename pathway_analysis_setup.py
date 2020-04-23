@@ -11,6 +11,8 @@ import csv as csv
 import pickle
 from bioservices import KEGG
 import urllib2 
+from bs4 import BeautifulSoup
+import itertools as it
 
 # import other pieces of our software
 import networkConstructor as nc
@@ -163,7 +165,7 @@ def retrieveGraph(name,aliasDict,dict1,dict2, cvDict, geneDict):
 		nc.uploadKEGGcodes_hsa([coder], graph,dict1, dict2)
 		# check to see if there is a connected component, simplify graph and print if so
 		if len(list(nx.connected_component_subgraphs(graph.to_undirected() )))>0:
-			nx.write_graphml(graph,coder+'_before.graphml')
+			#nx.write_graphml(graph,coder+'_before.graphml')
 			graph=simplifyNetworkpathwayAnalysis(graph, cvDict)
 			nx.write_graphml(graph,coder+'.graphml')
 			if len(genes.intersection(graph.nodes()))>1:
@@ -213,7 +215,6 @@ def find_pathways_organism(cvDict, preDefList = [],writeGraphml=True,  organism=
 	noDigits=allChars.translate(allChars, string.digits)
 	
 	genes=set(cvDict.keys()) # find the list of genes included in dataset
-
 	for x in pathwayList:
 		x=x.replace("path:","")
 		code=str(x)
@@ -222,15 +223,19 @@ def find_pathways_organism(cvDict, preDefList = [],writeGraphml=True,  organism=
 		graph=nx.DiGraph() # open a graph object
 		nc.uploadKEGGcodes([coder], graph, koDict) # get ko pathway
 		coder=str(organism+code) # set up with org letters
-		nc.uploadKEGGcodes_hsa([coder], graph,orgDict, koDict) # get org pathway
+		uploadKEGGcodes_org([coder], graph,orgDict, koDict) # get org pathway
 		# check to see if there is a connected component, simplify graph and print if so
-		if len(list(nx.connected_component_subgraphs(graph.to_undirected() )))>1: # if there is more than a 1 node connected component, run BONITA
-			nx.write_graphml(graph,coder+'_before.graphml')
+		allNodes= set(graph.nodes())
+		test= len(allNodes.intersection(genes))
+		print("Pathway: ", x, " Overlap: ", test, " Edges: ", len(graph.edges()))
+		if len(list(nx.connected_component_subgraphs(graph.to_undirected() )))>0: # if there is more than a 1 node connected component, run BONITA
+			#nx.write_graphml(graph,coder+'_before.graphml')
 			if len(genes.intersection(graph.nodes()))> minOverlap: # if there are 5 genes shared
 				graph=simplifyNetworkpathwayAnalysis(graph, cvDict) # simplify graph to nodes in dataset
 				nx.write_graphml(graph,coder+'.graphml') # write graph out
 				nx.write_gpickle(graph,coder+'.gpickle') # write graph out
 				print('nodes: ',str(len(graph.nodes())),',   edges:',str(len(graph.edges())))
+				print(graph.nodes())
 				# save the removed nodes and omics data values for just those nodes in the particular pathway
 				pathwaySampleList=[{} for q in range(len(geneDict[list(graph.nodes())[0]]))]
 				for noder in graph.nodes():
@@ -341,7 +346,7 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 	id_to_name = {} # map id numbers to names
 
 	for entry in soup.find_all('entry'):
-		print(entry)
+		#print(entry)
 		entry_split= entry['name'].split(':')
 		if len(entry_split)>2:
 			if entry_split[0]=='hsa' or entry_split[0]=='ko':
@@ -388,7 +393,7 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 				group_ids.append(component['id'])
 			groups[entry_id] = group_ids
 		else:
-			graph.add_node(entry_name, {'name': entry_name, 'type': entry_type})
+			graph.add_node(str.upper(str(entry_name)), {'name': str.upper(str(entry_name)), 'type': entry_type})
 
 	for relation in soup.find_all('relation'):
 		(color, signal) = ('black', 'a')
@@ -448,7 +453,7 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 		for (entry1, entry2) in it.product(entry1_list, entry2_list):
 			node1 = id_to_name[entry1]
 			node2 = id_to_name[entry2]
-			graph.add_edge(node1,node2, color=color, subtype='/'.join(subtypes), type=relation_type, signal=signal)
+			graph.add_edge(str.upper(str(node1)),str.upper(str(node2)), color=color, subtype='/'.join(subtypes), type=relation_type, signal=signal)
 
 	for node in graph.nodes():
 		if graph.degree(node)==0:
