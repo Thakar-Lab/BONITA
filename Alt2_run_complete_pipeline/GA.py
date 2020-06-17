@@ -485,8 +485,12 @@ def checkNodePossibilities(node, indy, newSSS, cellNum, model,params, KOlist, KI
 	indErrors=[]
 	# iterate over possibilities for this node
 	for i in range(1,2**(end-start)):
+		# printfile=open('output_file.txt','w')
+		# printfile.write(str(i)+'\n')
 		tempultimate=list(indy)
 		tempInd=bitList(i, len(truth))
+		# printfile.write(str(tempInd)+'\n')
+		# printfile.close()
 		tempultimate[start:end]=tempInd # set rule to one being checked
 		currentsumtemp=evaluateByNode(tempultimate, cellNum, model,  newSSS, params,KOlist, KIlist , boolC)
 		currentsum=currentsumtemp[node] # save the error found

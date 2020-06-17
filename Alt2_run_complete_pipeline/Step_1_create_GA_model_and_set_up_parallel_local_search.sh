@@ -7,9 +7,12 @@
 #SBATCH -c 1
 
 module load intelpython/2.7.12
+make
 python pathway_analysis_setup_net.py  -sep , "dataName.csv" "pathway.graphml"
 
 for graphfilename in *.gpickle; do
 	chmod -R 755 $graphfilename;
-	sbatch calcNodeImportancesubmit_parallel_local_search.sh $graphfilename;
+	for iteration in $(seq 1 5 ); do 
+		python re_run_nodes.py $graphfilename $iteration
+	done
 done

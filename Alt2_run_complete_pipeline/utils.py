@@ -193,6 +193,10 @@ def writeNode(currentNode,nodeIndividual, model):
 	andNodeInvertList=model.andNodeInvertList[currentNode] #find list of lists of whether input nodes need to be inverted (corresponds to inputOrder)
 	writenode=''+model.nodeList[currentNode]+'*=' # set up the initial string to use to write node
 
+	print(currentNode)
+	print(andNodes)
+	print(andNodeInvertList)
+	print(nodeIndividual)
 	if model.andLenList[currentNode]==0 or sum(nodeIndividual)==0:
 		return writenode + ' ' + model.nodeList[currentNode] #if no inputs, maintain value
 	elif len(andNodes)==1: 
@@ -227,6 +231,7 @@ def writeNode(currentNode,nodeIndividual, model):
 		writenode=writenode + orset.pop()
 		for val in orset:
 			writenode = writenode + ' or ' + val
+		print(writenode)
 		return writenode
 
 def LiuNetwork1Builder():
@@ -288,24 +293,23 @@ def makeModelRules(rules,sss,equal_sign='*='):
 				individual.append(0)
 	return model, individual, graph
 
-
-# if __name__ == '__main__':
-# 	##make factor-level plots for each way of parsing the data
-# 	sampleList, geneDict, cvDict=readFpkmData('testInput.txt', '\t')
-# 	with open('testRules.txt') as csvfile:
-# 		model, individual, graph= makeModelRules(csvfile.readlines(),sss=sampleList,equal_sign='=')
-# 	boolValues1=genInitValueList(sampleList,model)
-# 	boolValues2=[]
-# 	updateBooler=cdll.LoadLibrary('./simulator.so')
-# 	boolC=updateBooler.syncBool 
-# 	params=sim.paramClass()
-# 	model.initValueList=boolValues1
-# 	model.updateCpointers()
-# 	KOs,KIs=setupEmptyKOKI(len(sampleList))
-# 	for j in range(len(boolValues1)):
-# 		boolValues2.append(sim.NPsync(individual, model, params.cells, boolValues1[j], params, KOs[j], KIs[j], boolC, True))
-# 	print(boolValues2)
-# 	sampleList3, geneDict3, cvDict3=readFpkmData('testOutput.txt', '\t')
-# 	boolValues3=genInitValueList(sampleList3,model)
-# 	print(boolValues3)
-# 	print(boolValues3==boolValues2)
+# test whether the simulation code is working properly
+def simTest():
+	sampleList, geneDict, cvDict=readFpkmData('testInput.txt', '\t')
+	with open('testRules.txt') as csvfile:
+		model, individual, graph= makeModelRules(csvfile.readlines(),sss=sampleList,equal_sign='=')
+	boolValues1=genInitValueList(sampleList,model)
+	boolValues2=[]
+	updateBooler=cdll.LoadLibrary('./simulator.so')
+	boolC=updateBooler.syncBool 
+	params=sim.paramClass()
+	model.initValueList=boolValues1
+	model.updateCpointers()
+	KOs,KIs=setupEmptyKOKI(len(sampleList))
+	for j in range(len(boolValues1)):
+		boolValues2.append(sim.NPsync(individual, model, params.cells, boolValues1[j], params, KOs[j], KIs[j], boolC, True))
+	print(boolValues2)
+	sampleList3, geneDict3, cvDict3=readFpkmData('testOutput.txt', '\t')
+	boolValues3=genInitValueList(sampleList3,model)
+	print(boolValues3)
+	print(boolValues3==boolValues2)

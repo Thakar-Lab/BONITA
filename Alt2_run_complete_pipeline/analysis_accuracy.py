@@ -460,7 +460,7 @@ class modelHolder:
 	def modelHolder_updateCpointers(self):
 		tempandnoder=[]
 		tempandinverter=[]
-		for currentNode in range(500):
+		for currentNode in range(1000):
 			tempAndNodes=[]
 			tempandNodeInvertList=[]
 			if currentNode<len(self.nodeList):

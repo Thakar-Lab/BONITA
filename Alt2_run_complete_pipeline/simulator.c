@@ -14,7 +14,7 @@ int updateBool(int currentNode, int *oldValue,int *nodeIndividual, int andNodes[
 	int indindex;
 	int addnode;
 	int newval;
-
+	
 	// go through list of possible shadow and nodes to see which ones actually contribute
 	for( indindex=nodeStart; indindex< nodeEnd; indindex++)
 	{
@@ -59,7 +59,7 @@ void syncBool(int *avg,int *individual,int indLen, int nodeNum, int *andLenList,
 	int nodeStart;
 	int oldValue[1000];
 	int newValue[1000];
-
+	
 	for(i=0; i<nodeNum; i++){newValue[i]=initValues[i];}
 
 	for( step=0; step < simSteps; step++){
