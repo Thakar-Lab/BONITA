@@ -35,10 +35,10 @@ def outputGraphs(pathway, RAval, comparator, pathImportances, ERS, ERS_gmean, IS
 	original=pathway[3].copy()
 	nx.set_node_attributes(original,'Display Name',{k: k for k in original.nodes()})
 	nx.set_node_attributes(original,'andNode',{k: 0 for k in original.nodes()})
-	nx.set_node_attributes(original,'RA',{k: RAval[k] for k in original.nodes()})
-	nx.set_node_attributes(original,'ERS geometric mean',{k: ERS_gmean[k] for k in original.nodes()})
-	nx.set_node_attributes(original,'IS CV',{k: ISvars[k] for k in original.nodes()})
-	nx.set_node_attributes(original,'CV (expression)',{k: CVdict[k] for k in original.nodes()})
+	nx.set_node_attributes(original,'RA',{k: float(RAval[k]) for k in original.nodes()})
+	nx.set_node_attributes(original,'ERS geometric mean',{k: float(ERS_gmean[k]) for k in original.nodes()})
+	nx.set_node_attributes(original,'IS CV',{k: float(ISvars[k]) for k in original.nodes()})
+	nx.set_node_attributes(original,'CV (expression)',{k: float(CVdict[k]) for k in original.nodes()})
 
 	# print(maximportance)
 	maximportance=max([(pathImportances[v]) for v in pathImportances])
@@ -136,6 +136,7 @@ def findPathwayList_justRavenPathway():
 		pathVals=[]
 		rules=[]
 		equivLengthAccumulated=[]
+		varianceVals=[]
 		for i in range(1,6): 
 			[storeModel1, knockoutLists, knockinLists, individual, equivs]=pickle.Unpickler(open( code+'_'+str(i)+'_setup.pickle', "rb" )).load()
 			model=modelHolder(storeModel1)
@@ -159,9 +160,9 @@ def findPathwayList_justRavenPathway():
 		ERSgmean={}
 		graph = nx.read_gpickle("temp_series1_net"+".gpickle")
 		ImportanceVals={} # average importance vals over trials
-		
+		ImportanceVars={}
 		for node in range(len(model.nodeList)): 
-			ERSsize[model.nodeList[node]]= np.mean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))])
+			ERSsize[model.nodeList[node]]= float(np.mean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))]))
 			ERSgmean[model.nodeList[node]]= gmean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))])
 			ImportanceVals[model.nodeList[node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
 			ImportanceVars[model.nodeList[node]]=float(np.mean([varianceVals[i][node] for i in range(5)]))
