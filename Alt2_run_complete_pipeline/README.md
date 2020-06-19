@@ -6,17 +6,24 @@ Expression dataset
 USER MUST PASTE THESE FILE NAMES INTO THE STEP 1 SCRIPT
 ALSO NEED TO CHANGE 'temp_series1_net_sss' (don't remove _sss just replace the graph name) name in the parallel_local_search_find_node_importance to match file name of input graphml
 Finally, paste the file names for data, matrix of sample groups, and contrasts in text file into Step_5_compile_final_results.sh in place of "dataName.csv" "matrix.name" "diff.file"
+
+
 ## Step 1: Set up data and network
 Runs pathway analysis setup then starts jobs for local search
 Need to change names of  "dataName.csv" and "pathway.graphml" in the file to the names of the files to be used in the run
+
+
 "sbatch Step_1_create_GA_model_and_set_up_parallel_local_search.sh"
 
 ## Step 2: Run parallel local search
+This performs the local search. You may need to run the"sbatch Step_2_parallel_local_search_find_node_importance.sh" more than once if you have >350 nodes in the network. You should have to run this step approximately node_number/350 (round up). Please wait until all jobs have finisehd to resubmit.  
+
 "sbatch Step_2_parallel_local_search_find_node_importance.sh"
 
 
 ## Step 3: Clean up results from local search and setup IS calculations
 Cleans up the results of step 1
+
  "sbatch Step_3_cleanup_local_search.sh"
 
 ## Step 4: Run Impact Score calculations
