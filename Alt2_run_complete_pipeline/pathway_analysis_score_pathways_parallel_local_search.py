@@ -15,7 +15,7 @@ import os as os
 import pickle
 import argparse as argparse
 import numpy as np
-from scipy.stats import variation
+from scipy.stats import variation, gmean
 import csv
 import math
 from random import randint
@@ -30,13 +30,16 @@ import networkConstructor as nc
 from utils import writeModel, Get_expanded_network
 
 # write out graphs with relative abundance, importance scores on them
-def outputGraphs(pathway, RAval, comparator, pathImportances, ERS):
+def outputGraphs(pathway, RAval, comparator, pathImportances, ERS, ERS_gmean, ISvars, CVdict):
 	# write original graph with annotations
 	original=pathway[3].copy()
 	nx.set_node_attributes(original,'Display Name',{k: k for k in original.nodes()})
 	nx.set_node_attributes(original,'andNode',{k: 0 for k in original.nodes()})
 	nx.set_node_attributes(original,'RA',{k: RAval[k] for k in original.nodes()})
-	nx.set_node_attributes(original,'ERS size',{k: ERS[k] for k in original.nodes()})
+	nx.set_node_attributes(original,'ERS geometric mean',{k: ERS_gmean[k] for k in original.nodes()})
+	nx.set_node_attributes(original,'IS CV',{k: ISvars[k] for k in original.nodes()})
+	nx.set_node_attributes(original,'CV (expression)',{k: CVdict[k] for k in original.nodes()})
+
 	# print(maximportance)
 	maximportance=max([(pathImportances[v]) for v in pathImportances])
 	if maximportance==0:
@@ -144,6 +147,7 @@ def findPathwayList_justRavenPathway():
 			variances=[variation([values[j][k] for j in range(0,10)]) for k in range(0,len(values[0]))]
 			print(variances)
 			pathVals.append(newvalues)
+			varianceVals.append(variances)
 			individualOut=[]
 			EquivLengths=[]
 			for equiv in equivs:
@@ -152,13 +156,17 @@ def findPathwayList_justRavenPathway():
 			rules.append(writeModel(individualOut, model))
 			equivLengthAccumulated.append(EquivLengths)
 		ERSsize={}
+		ERSgmean={}
 		graph = nx.read_gpickle("temp_series1_net"+".gpickle")
 		ImportanceVals={} # average importance vals over trials
+		
 		for node in range(len(model.nodeList)): 
 			ERSsize[model.nodeList[node]]= np.mean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))])
+			ERSgmean[model.nodeList[node]]= gmean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))])
 			ImportanceVals[model.nodeList[node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
+			ImportanceVars[model.nodeList[node]]=float(np.mean([varianceVals[i][node] for i in range(5)]))
 		# add nodes removed during network simplification back in
-		pathways.append(['COVID-CONTROL',ImportanceVals, rules, graph,ERSsize])
+		pathways.append(['COVID-CONTROL',ImportanceVals, rules, graph,ERSsize, ERSgmean, ImportanceVars])
 	return pathways
 
 # read in Omics data
@@ -270,7 +278,7 @@ def analyze_pathways_raven(diffName, matrixName, dataName, delmited):
 		print(pathway[0])
 		# print out graphs with importance scores, rules, and relative abundances
 		for RAval, comparator in zip(RAvals, comparisonStrings):
-			outputGraphs(pathway, RAval, comparator, pathway[1], pathway[4])
+			outputGraphs(pathway, RAval, comparator, pathway[1], pathway[4], pathway[5],pathway[6], CVdict)
 
 
 # calculate z score for a given pathway
