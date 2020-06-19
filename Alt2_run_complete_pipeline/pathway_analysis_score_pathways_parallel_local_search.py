@@ -30,12 +30,13 @@ import networkConstructor as nc
 from utils import writeModel, Get_expanded_network
 
 # write out graphs with relative abundance, importance scores on them
-def outputGraphs(pathway, RAval, comparator, pathImportances):
+def outputGraphs(pathway, RAval, comparator, pathImportances, ERS):
 	# write original graph with annotations
 	original=pathway[3].copy()
 	nx.set_node_attributes(original,'Display Name',{k: k for k in original.nodes()})
 	nx.set_node_attributes(original,'andNode',{k: 0 for k in original.nodes()})
 	nx.set_node_attributes(original,'RA',{k: RAval[k] for k in original.nodes()})
+	nx.set_node_attributes(original,'ERS size',{k: ERS[k] for k in original.nodes()})
 	# print(maximportance)
 	maximportance=max([(pathImportances[v]) for v in pathImportances])
 	if maximportance==0:
@@ -131,6 +132,7 @@ def findPathwayList_justRavenPathway():
 	for code in ['IS_pickles/IS']:
 		pathVals=[]
 		rules=[]
+		equivLengthAccumulated=[]
 		for i in range(1,6): 
 			[storeModel1, knockoutLists, knockinLists, individual, equivs]=pickle.Unpickler(open( code+'_'+str(i)+'_setup.pickle', "rb" )).load()
 			model=modelHolder(storeModel1)
@@ -143,15 +145,20 @@ def findPathwayList_justRavenPathway():
 			print(variances)
 			pathVals.append(newvalues)
 			individualOut=[]
+			EquivLengths=[]
 			for equiv in equivs:
+				EquivLengths.append(len(equiv))
 				individualOut.extend(equiv[0])
 			rules.append(writeModel(individualOut, model))
+			equivLengthAccumulated.append(EquivLengths)
+		ERSsize={}
 		graph = nx.read_gpickle("temp_series1_net"+".gpickle")
 		ImportanceVals={} # average importance vals over trials
 		for node in range(len(model.nodeList)): 
+			ERSsize[model.nodeList[node]]= np.mean([equivLengthAccumulated[q][node] for q in range(len(equivLengthAccumulated))])
 			ImportanceVals[model.nodeList[node]]=float(np.mean([pathVals[i][node] for i in range(5)]))
 		# add nodes removed during network simplification back in
-		pathways.append(['COVID-CONTROL',ImportanceVals, rules, graph])
+		pathways.append(['COVID-CONTROL',ImportanceVals, rules, graph,ERSsize])
 	return pathways
 
 # read in Omics data
@@ -263,7 +270,7 @@ def analyze_pathways_raven(diffName, matrixName, dataName, delmited):
 		print(pathway[0])
 		# print out graphs with importance scores, rules, and relative abundances
 		for RAval, comparator in zip(RAvals, comparisonStrings):
-			outputGraphs(pathway, RAval, comparator, pathway[1])
+			outputGraphs(pathway, RAval, comparator, pathway[1], pathway[4])
 
 
 # calculate z score for a given pathway
