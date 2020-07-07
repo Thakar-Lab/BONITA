@@ -28,7 +28,7 @@ def makeSIF(pathway, keggObject):
 	print("Pathway: ")
 	print(pathway.encode('utf-8'))
 	activationRelations = ["activation", "binding/association", "phosphorylation", "indirect effect", "dissociation"] #Change
-	inhibitionRelations = ["inhibition", "dephosphorylation", "dissociation", "ubiquitination"] #Change
+	inhibitionRelations = ["inhibition", "dephosphorylation", "dissociation", "ubiquitination", "repression"] #Change
 	try:
 		res = keggObject.parse_kgml_pathway(pathway) #Change
 	except:
@@ -351,7 +351,7 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 		if len(entry_split)>2:
 			if entry_split[0]=='hsa' or entry_split[0]=='ko':
 				if entry_split[0]=='hsa':
-					useDict=hsaDict
+					useDict = orgDict #useDict=hsaDict
 				else:
 					useDict=KEGGdict
 				nameList=[]
@@ -372,7 +372,7 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 			if entry_split[0]=='hsa':
 				entry_name=entry_split[1]
 				entry_type = entry['type']
-				entry_name = hsaDict[entry_name] if entry_name in hsaDict.keys() else entry_name
+				entry_name = orgDict[entry_name] if entry_name in orgDict.keys() else entry_name #hsaDict[entry_name] if entry_name in hsaDict.keys() else entry_name
 			elif entry_split[0]=='ko':
 				entry_name=entry_split[1]
 				entry_type = entry['type']
@@ -431,6 +431,9 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 		elif 'ubiquitination' in subtypes:
 			color='cyan'
 			signal='i'
+		elif 'repression' in subtypes:
+			color="cyan"
+			signal="i"
 		else:
 			print('color not detected. Signal assigned to activation arbitrarily')
 			print(subtypes)
