@@ -223,7 +223,7 @@ def find_pathways_organism(cvDict, preDefList = [],writeGraphml=True,  organism=
 		graph=nx.DiGraph() # open a graph object
 		nc.uploadKEGGcodes([coder], graph, koDict) # get ko pathway
 		coder=str(organism+code) # set up with org letters
-		uploadKEGGcodes_org([coder], graph,orgDict, koDict) # get org pathway
+		uploadKEGGcodes_org([coder], graph,orgDict, koDict, organism) # get org pathway
 		# check to see if there is a connected component, simplify graph and print if so
 		allNodes= set(graph.nodes())
 		test= len(allNodes.intersection(genes))
@@ -236,12 +236,13 @@ def find_pathways_organism(cvDict, preDefList = [],writeGraphml=True,  organism=
 				nx.write_gpickle(graph,coder+'.gpickle') # write graph out
 				print('nodes: ',str(len(graph.nodes())),',   edges:',str(len(graph.edges())))
 				print(graph.nodes())
-				# save the removed nodes and omics data values for just those nodes in the particular pathway
-				pathwaySampleList=[{} for q in range(len(geneDict[list(graph.nodes())[0]]))]
-				for noder in graph.nodes():
-					for jn in range(len(pathwaySampleList)):
-						pathwaySampleList[jn][noder]=geneDict[noder][jn]
-				pickle.dump( pathwaySampleList, open( coder+"_sss.pickle", "wb" ) )
+				if len(graph.nodes()) > 0:
+					# save the removed nodes and omics data values for just those nodes in the particular pathway
+					pathwaySampleList=[{} for q in range(len(geneDict[list(graph.nodes())[0]]))]
+					for noder in graph.nodes():
+						for jn in range(len(pathwaySampleList)):
+							pathwaySampleList[jn][noder]=geneDict[noder][jn]
+					pickle.dump( pathwaySampleList, open( coder+"_sss.pickle", "wb" ) )
 
 # identify pathways and complete setup for simulation
 def findPathwaysHuman(cvDict,gmtName, geneDict):
@@ -268,23 +269,23 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 			graph.remove_edge(edge[0],edge[1])
 
 	# 2.  remove complexes and rewire components
-	removeNodeList= [x for x in graph.nodes() if  '-' in x]
+	removeNodeList= [x for x in graph.nodes() if  '|||' in x]
 	for rm in removeNodeList:
 		for start in graph.predecessors(rm):
 			edge1=graph.get_edge_data(start,rm)['signal']
 			if edge1=='i':
-				for element in rm.split('-'):
+				for element in rm.split('|||'):
 					graph.add_edge(start,element,signal='i')
 			else:
-				for element in rm.split('-'):
+				for element in rm.split('|||'):
 					graph.add_edge(start,element,signal='a')
 		for finish in graph.successors(rm):
 			edge2=graph.get_edge_data(rm,finish)['signal']		
 			if edge2=='i':
-				for element in rm.split('-'):
+				for element in rm.split('|||'):
 					graph.add_edge(element,finish,signal='i')
 			else:
-				for element in rm.split('-'):
+				for element in rm.split('|||'):
 					graph.add_edge(element,finish,signal='a')
 		graph.remove_node(rm)
 
@@ -310,8 +311,8 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 	for node in graph.nodes():
 		predlist=graph.predecessors(node)
 		for pred in predlist:
-			if '-' in pred:
-				genes=pred.split('-')
+			if '|||' in pred:
+				genes=pred.split('|||')
 				flag=True
 				for gene in genes:
 					if not gene in predlist:
@@ -326,7 +327,7 @@ def simplifyNetworkpathwayAnalysis(graph, ss):
 	return graph
 
 #Upload KEGG codes modified for human pathways
-def uploadKEGGcodes_org(codelist, graph, orgDict, KEGGdict):
+def uploadKEGGcodes_org(codelist, graph, orgDict, KEGGdict, organism):
 #queries the KEGG for the pathways with the given codes then uploads to graph. Need to provide the KEGGdict so that we can name the nodes with gene names rather than KO numbers
 	for code in codelist:
 		try:
@@ -335,11 +336,11 @@ def uploadKEGGcodes_org(codelist, graph, orgDict, KEGGdict):
 			print('could not read code: ' + code )
 			continue
 		text=url.readlines()
-		readKEGGorg(text, graph, orgDict, KEGGdict)
+		readKEGGorg(text, graph, orgDict, KEGGdict, organism)
 		#print(code)
 		#print(graph.nodes())
 
-def readKEGGorg(lines, graph, orgDict, KEGGdict):
+def readKEGGorg(lines, graph, orgDict, KEGGdict, organism):
 	#read all lines into a bs4 object using libXML parser
 	soup = BeautifulSoup(''.join(lines), 'xml')
 	groups = {} # store group IDs and list of sub-ids
@@ -349,9 +350,9 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 		#print(entry)
 		entry_split= entry['name'].split(':')
 		if len(entry_split)>2:
-			if entry_split[0]=='hsa' or entry_split[0]=='ko':
-				if entry_split[0]=='hsa':
-					useDict=hsaDict
+			if entry_split[0]==organism or entry_split[0]=='ko':
+				if entry_split[0]==organism:
+					useDict=orgDict
 				else:
 					useDict=KEGGdict
 				nameList=[]
@@ -363,16 +364,18 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 				for i in range(len(entry_split)):
 					nameList.append(entry_split[i].split()[0])
 				for namer in nameList:
-					entry_name=entry_name+'-'+useDict[namer] if namer in useDict.keys() else entry_name+'-'+namer
+					# concatenates gene names into one string when they appear in one entry
+					# note that these could represent complexes OR functional redundancy- this could probably be handled better?
+					entry_name=entry_name+'|||'+useDict[namer] if namer in useDict.keys() else entry_name+'|||'+namer
 				entry_type = entry['type']
 			else:
 				entry_name=entry['name']
 				entry_type = entry['type']
 		else:
-			if entry_split[0]=='hsa':
+			if entry_split[0]==organism:
 				entry_name=entry_split[1]
 				entry_type = entry['type']
-				entry_name = hsaDict[entry_name] if entry_name in hsaDict.keys() else entry_name
+				entry_name = orgDict[entry_name] if entry_name in orgDict.keys() else entry_name
 			elif entry_split[0]=='ko':
 				entry_name=entry_split[1]
 				entry_type = entry['type']
@@ -383,7 +386,6 @@ def readKEGGorg(lines, graph, orgDict, KEGGdict):
 			else:
 				entry_name=entry['name']
 				entry_type = entry['type']
-			
 		entry_id = entry['id']
 		id_to_name[entry_id] = entry_name
 
