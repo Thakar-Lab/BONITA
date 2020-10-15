@@ -8,5 +8,5 @@
 #SBATCH -c 1
 
 module load intelpython/2.7.12
-srun python pathway_analysis_score_nodes.py $1 $SLURM_ARRAY_TASK_ID
+python pathway_analysis_score_nodes.py $1 $SLURM_ARRAY_TASK_ID
 echo "ran GA"
