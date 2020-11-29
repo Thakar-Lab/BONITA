@@ -47,7 +47,7 @@ You will need the following files to run BONITA:
 There are three main steps in BONITA: prepare pathways for rule inference, rule inference, and pathway analysis. All necessary files for an example run are provided in the pathway_analysis folder within experiments folder. The preparation step requires internet access to access the KEGG API. 
 
 **Step 1: Pathway preparation**
-
+**See the bash script pathwayPreparation.sh for examples**
 **This step requires internet access.** 
 
 **There are three ways to complete this process: 1) on a gmt of human pathways, 2) on all KEGG pathways for any organism, or 3) on a list of KEGG pathways for any organism**
