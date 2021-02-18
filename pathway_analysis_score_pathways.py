@@ -125,7 +125,7 @@ def readFpkm(dataName,delmited):
 		reader = csv.reader(csvfile, delimiter=delmited)
 		firstline=reader.next()
 		for row in reader:
-			data[row[0]]=[float(row[k]) for k in range(1,len(row))]
+			data[str(row[0]).upper()]=[float(row[k]) for k in range(1,len(row))]
 	firstline.pop(0)
 	
 	# identify positions of each sample in the data
