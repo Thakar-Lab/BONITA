@@ -218,7 +218,10 @@ def scorePathway(RAs,pathImportances, CVdict):
 		randomScores.append(tempscore)
 	meaner=np.mean(randomScores)
 	stdev=np.std(randomScores)
-	zscore=(score-meaner)/stdev
+	if stdev==0:
+		zscore=0
+	else:
+		zscore=(score-meaner)/stdev
 	return zscore
 
 if __name__ == '__main__':
