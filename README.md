@@ -2,6 +2,8 @@
 
 BONITA- Boolean Omics Network Invariant-Time Analysis is a package for the inference of Boolean rules and pathway analysis on omics data. It can be applied to help uncover underlying relationships in biological data. Please see our [publication](https://doi.org/10.1371/journal.pcbi.1007317) for more information. 
 
+__Please consider using our reimplementation of BONITA in Python3, available at [https://github.com/Thakar-Lab/BONITA-Python3](https://github.com/Thakar-Lab/BONITA-Python3), which includes a reusable conda environment for ease of use and significant improvements in speed.__
+
 **Authors**: _Rohith Palli, Mukta G. Palshikar, and Juilee Thakar_\
 **Maintainer**: Please contact Rohith Palli at rohith_palli@urmc.rochester.edu
 
